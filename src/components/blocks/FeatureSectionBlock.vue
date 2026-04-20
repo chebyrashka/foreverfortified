@@ -47,6 +47,7 @@ h2 {
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4vw, 4.6rem);
+  font-weight: var(--font-heading-weight);
   line-height: 0.98;
 }
 

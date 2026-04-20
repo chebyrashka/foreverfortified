@@ -292,7 +292,7 @@ defineProps<{
 .hero__eyebrow {
   margin: 0 0 var(--size-4);
   color: var(--color-stone);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.9rem;
   font-weight: 850;
   text-transform: uppercase;
@@ -303,7 +303,7 @@ defineProps<{
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(3.1rem, 8.4vw, 7.4rem);
-  font-weight: 900;
+  font-weight: var(--font-display-weight);
   line-height: 0.91;
 }
 
@@ -334,7 +334,7 @@ defineProps<{
 .hero__proof strong {
   display: block;
   color: var(--color-warm-white);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 1.5rem;
 }
 
@@ -362,7 +362,7 @@ defineProps<{
   place-items: center;
   border-left: 1px solid rgb(31 36 33 / 0.1);
   color: var(--color-graphite);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.88rem;
   font-weight: 800;
   text-align: center;
@@ -455,7 +455,7 @@ defineProps<{
   align-items: center;
   gap: var(--size-2);
   color: var(--color-forest);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-weight: 850;
 }
 
@@ -486,7 +486,7 @@ defineProps<{
   border-left: 3px solid var(--color-copper);
   background: rgb(255 255 255 / 0.6);
   padding: var(--size-4);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-weight: 800;
 }
 
@@ -520,6 +520,7 @@ defineProps<{
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 4.2rem);
+  font-weight: var(--font-heading-weight);
   line-height: 0.98;
 }
 
@@ -604,7 +605,7 @@ figcaption span {
 .process-list span {
   display: block;
   color: var(--color-copper);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.9rem;
   font-weight: 900;
 }
@@ -650,7 +651,7 @@ figcaption span {
 
 .article-card span {
   color: var(--color-copper);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.82rem;
   font-weight: 850;
 }
@@ -684,6 +685,7 @@ figcaption span {
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2.25rem, 4vw, 4.4rem);
+  font-weight: var(--font-heading-weight);
   line-height: 0.98;
 }
 

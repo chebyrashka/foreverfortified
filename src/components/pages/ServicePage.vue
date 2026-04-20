@@ -164,7 +164,7 @@ defineProps<{
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2.7rem, 5.6vw, 6.2rem);
-  font-weight: 900;
+  font-weight: var(--font-display-weight);
   line-height: 0.94;
 }
 
@@ -274,6 +274,7 @@ defineProps<{
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 4.5rem);
+  font-weight: var(--font-heading-weight);
   line-height: 0.98;
 }
 
@@ -364,6 +365,7 @@ details p {
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 4.2rem);
+  font-weight: var(--font-heading-weight);
   line-height: 0.98;
 }
 

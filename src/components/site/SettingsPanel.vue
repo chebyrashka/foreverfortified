@@ -15,36 +15,36 @@ type TypeOption = {
 };
 
 const palettes: PaletteOption[] = [
-  { id: "forest", label: "Forest", colors: ["#1F2421", "#2F4A3D", "#B86A3D"] },
-  { id: "pine-bone", label: "Pine & Bone", colors: ["#17231D", "#21432E", "#F6F1E8"] },
-  { id: "olive-field", label: "Olive Field", colors: ["#242A1F", "#53663B", "#B08145"] },
-  { id: "emerald-slate", label: "Emerald Slate", colors: ["#14211F", "#0F513C", "#C48A52"] }
+  { id: "forest", label: "Forest", colors: ["#17231D", "#2F5E40", "#FBFAF5"] },
+  { id: "pine-bone", label: "Pine & Bone", colors: ["#17231D", "#285B3D", "#FBFAF6"] },
+  { id: "olive-field", label: "Olive Field", colors: ["#242A1F", "#3F6A38", "#FBFAF2"] },
+  { id: "emerald-slate", label: "Emerald Slate", colors: ["#14211F", "#0F684B", "#FBFAF6"] }
 ];
 
 const typePairings: TypeOption[] = [
   {
     id: "original",
-    label: "Sora · Inter",
-    note: "Current",
-    sampleFamily: "\"Sora\", \"Inter\", system-ui, sans-serif"
-  },
-  {
-    id: "editorial",
-    label: "Newsreader · Manrope",
-    note: "Editorial",
-    sampleFamily: "\"Newsreader\", Georgia, serif"
-  },
-  {
-    id: "modern-serif",
-    label: "Fraunces · Inter",
-    note: "Modern serif",
-    sampleFamily: "\"Fraunces\", Georgia, serif"
-  },
-  {
-    id: "modern-contractor",
     label: "Sora · Atkinson",
-    note: "Practical",
+    note: "Current",
     sampleFamily: "\"Sora\", \"Manrope\", system-ui, sans-serif"
+  },
+  {
+    id: "source-serif",
+    label: "Source Serif · Manrope",
+    note: "Calm serif",
+    sampleFamily: "\"Source Serif 4\", Georgia, serif"
+  },
+  {
+    id: "lora-atkinson",
+    label: "Lora · Atkinson",
+    note: "Warm serif",
+    sampleFamily: "\"Lora\", Georgia, serif"
+  },
+  {
+    id: "literata",
+    label: "Literata · Manrope",
+    note: "Refined serif",
+    sampleFamily: "\"Literata\", Georgia, serif"
   }
 ];
 
@@ -83,8 +83,13 @@ function resetSettings() {
 }
 
 onMounted(() => {
-  selectedPalette.value = window.localStorage.getItem("ff-palette") || "forest";
-  selectedType.value = window.localStorage.getItem("ff-type") || "original";
+  const storedPalette = window.localStorage.getItem("ff-palette") || "forest";
+  const storedType = window.localStorage.getItem("ff-type") || "original";
+  const paletteIds = palettes.map((palette) => palette.id);
+  const typeIds = typePairings.map((type) => type.id);
+
+  selectedPalette.value = paletteIds.includes(storedPalette) ? storedPalette : "forest";
+  selectedType.value = typeIds.includes(storedType) ? storedType : "original";
   applySettings();
 });
 </script>

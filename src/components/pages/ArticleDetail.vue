@@ -49,6 +49,7 @@ defineProps<{
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2.7rem, 5.8vw, 6.4rem);
+  font-weight: var(--font-display-weight);
   line-height: 0.94;
 }
 
@@ -79,5 +80,6 @@ defineProps<{
   margin-top: var(--size-10);
   font-family: var(--font-heading);
   font-size: 2rem;
+  font-weight: var(--font-heading-weight);
 }
 </style>

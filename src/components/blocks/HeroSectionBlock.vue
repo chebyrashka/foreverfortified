@@ -75,6 +75,7 @@ defineProps<{
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: var(--font-display-weight);
   line-height: 0.92;
 }
 

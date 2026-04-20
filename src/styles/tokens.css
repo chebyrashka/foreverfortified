@@ -1,21 +1,23 @@
 :root {
   color-scheme: light;
 
-  --color-iron: #1f2421;
-  --color-graphite: #363a36;
-  --color-forest: #2f4a3d;
-  --color-copper: #b86a3d;
-  --color-copper-dark: #934f2d;
-  --color-warm-white: #f7f3ec;
-  --color-stone: #d8d2c7;
-  --color-stone-light: #ece7dd;
+  --color-iron: #17231d;
+  --color-graphite: #334039;
+  --color-forest: #244c35;
+  --color-copper: #2f5e40;
+  --color-copper-dark: #1f442e;
+  --color-warm-white: #fbfaf5;
+  --color-stone: #d9e1d8;
+  --color-stone-light: #f0f3ec;
   --color-white: #ffffff;
-  --color-black: #101311;
+  --color-black: #0d1410;
 
   --font-heading: "Sora", "Manrope", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", "Atkinson Hyperlegible", system-ui, sans-serif;
-  --font-label: "Inter", "Manrope", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Inter", system-ui, sans-serif;
+  --font-label: "Manrope", "Inter", system-ui, sans-serif;
   --font-quote: "Newsreader", Georgia, serif;
+  --font-heading-weight: 800;
+  --font-display-weight: 900;
 
   --size-1: 0.25rem;
   --size-2: 0.5rem;
@@ -33,8 +35,8 @@
   --radius-sm: 6px;
   --radius-md: 8px;
 
-  --shadow-soft: 0 18px 45px rgb(31 36 33 / 0.12);
-  --shadow-strong: 0 28px 70px rgb(31 36 33 / 0.22);
+  --shadow-soft: 0 18px 45px rgb(23 35 29 / 0.12);
+  --shadow-strong: 0 28px 70px rgb(23 35 29 / 0.22);
 
   --container: 1180px;
   --container-wide: 1360px;
