@@ -1,0 +1,11 @@
+---
+import ServicePage from "@/components/pages/ServicePage.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company, services, testimonials } from "@/data/site";
+
+const service = services.find((item) => item.slug === "roofing");
+---
+
+<BaseLayout title="Roofing" description="Roofing inspections, repairs, and replacement work built for long-term protection.">
+  {service && <ServicePage service={service} testimonials={testimonials} estimateUrl={company.estimateUrl} />}
+</BaseLayout>

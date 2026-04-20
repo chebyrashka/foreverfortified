@@ -1,0 +1,17 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import TestimonialGridBlock from "@/components/blocks/TestimonialGridBlock.vue";
+
+const { blok } = Astro.props;
+const items = Array.isArray(blok?.items)
+  ? blok.items.map((item) => ({
+      quote: item.quote,
+      name: item.name,
+      meta: item.meta
+    }))
+  : [];
+---
+
+<div {...storyblokEditable(blok)}>
+  <TestimonialGridBlock eyebrow={blok?.eyebrow} title={blok?.title} items={items} />
+</div>

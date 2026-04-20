@@ -1,0 +1,7 @@
+{
+  "name": "Forever Fortified Homepage Builder",
+  "id": "forever-fortified-homepage-builder",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}

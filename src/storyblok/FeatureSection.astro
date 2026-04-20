@@ -1,0 +1,18 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import FeatureSectionBlock from "@/components/blocks/FeatureSectionBlock.vue";
+
+const { blok } = Astro.props;
+const image = blok?.image?.filename || blok?.image || "";
+const imagePosition = blok?.image_position === "right" ? "right" : "left";
+---
+
+<div {...storyblokEditable(blok)}>
+  <FeatureSectionBlock
+    eyebrow={blok?.eyebrow}
+    title={blok?.title || "Built around the details homeowners notice."}
+    text={blok?.text}
+    image={image}
+    imagePosition={imagePosition}
+  />
+</div>

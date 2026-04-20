@@ -1,0 +1,45 @@
+:root {
+  color-scheme: light;
+
+  --color-iron: #1f2421;
+  --color-graphite: #363a36;
+  --color-forest: #2f4a3d;
+  --color-copper: #b86a3d;
+  --color-copper-dark: #934f2d;
+  --color-warm-white: #f7f3ec;
+  --color-stone: #d8d2c7;
+  --color-stone-light: #ece7dd;
+  --color-white: #ffffff;
+  --color-black: #101311;
+
+  --font-heading: "Sora", "Manrope", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-quote: "Newsreader", Georgia, serif;
+
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-5: 1.25rem;
+  --size-6: 1.5rem;
+  --size-8: 2rem;
+  --size-10: 2.5rem;
+  --size-12: 3rem;
+  --size-16: 4rem;
+  --size-20: 5rem;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  --shadow-soft: 0 18px 45px rgb(31 36 33 / 0.12);
+  --shadow-strong: 0 28px 70px rgb(31 36 33 / 0.22);
+
+  --container: 1180px;
+  --container-wide: 1360px;
+  --section-y: clamp(4rem, 7vw, 7.5rem);
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+
+  --header-height: 78px;
+  --transition: 180ms ease;
+}

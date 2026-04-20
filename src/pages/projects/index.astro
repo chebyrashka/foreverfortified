@@ -1,0 +1,9 @@
+---
+import ProjectIndex from "@/components/pages/ProjectIndex.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { featuredProject } from "@/data/site";
+---
+
+<BaseLayout title="Recent Work" description="Recent Forever Fortified project stories and before/after work.">
+  <ProjectIndex project={featuredProject} />
+</BaseLayout>

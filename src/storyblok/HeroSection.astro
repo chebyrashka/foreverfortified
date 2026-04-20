@@ -1,0 +1,20 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import HeroSectionBlock from "@/components/blocks/HeroSectionBlock.vue";
+
+const { blok } = Astro.props;
+const image = blok?.image?.filename || blok?.image || "";
+---
+
+<div {...storyblokEditable(blok)}>
+  <HeroSectionBlock
+    eyebrow={blok?.eyebrow}
+    title={blok?.title || "Exterior and remodeling work built to hold up."}
+    text={blok?.text}
+    image={image}
+    primaryCtaLabel={blok?.primary_cta_label}
+    primaryCtaHref={blok?.primary_cta_href?.url || blok?.primary_cta_href}
+    secondaryCtaLabel={blok?.secondary_cta_label}
+    secondaryCtaHref={blok?.secondary_cta_href?.url || blok?.secondary_cta_href}
+  />
+</div>

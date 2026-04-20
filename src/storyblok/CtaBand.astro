@@ -1,0 +1,16 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import CtaBandBlock from "@/components/blocks/CtaBandBlock.vue";
+
+const { blok } = Astro.props;
+---
+
+<div {...storyblokEditable(blok)}>
+  <CtaBandBlock
+    eyebrow={blok?.eyebrow}
+    title={blok?.title || "Ready to fortify your home?"}
+    text={blok?.text}
+    ctaLabel={blok?.cta_label}
+    ctaHref={blok?.cta_href?.url || blok?.cta_href}
+  />
+</div>

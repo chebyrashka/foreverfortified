@@ -1,0 +1,18 @@
+---
+import ArticleDetail from "@/components/pages/ArticleDetail.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articles, company } from "@/data/site";
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<BaseLayout title={article.title} description={article.excerpt}>
+  <ArticleDetail article={article} estimateUrl={company.estimateUrl} />
+</BaseLayout>

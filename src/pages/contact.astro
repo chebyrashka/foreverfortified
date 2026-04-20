@@ -1,0 +1,9 @@
+---
+import ContactPage from "@/components/pages/ContactPage.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company } from "@/data/site";
+---
+
+<BaseLayout title="Request an Estimate" description="Request an estimate from Forever Fortified.">
+  <ContactPage company={company} />
+</BaseLayout>

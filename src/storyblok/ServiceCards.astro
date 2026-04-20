@@ -1,0 +1,19 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import ServiceCardsBlock from "@/components/blocks/ServiceCardsBlock.vue";
+
+const { blok } = Astro.props;
+const items = Array.isArray(blok?.items)
+  ? blok.items.map((item) => ({
+      title: item.title,
+      text: item.text,
+      image: item.image?.filename || item.image || "",
+      href: item.href?.url || item.href || "",
+      ctaLabel: item.cta_label
+    }))
+  : [];
+---
+
+<div {...storyblokEditable(blok)}>
+  <ServiceCardsBlock eyebrow={blok?.eyebrow} title={blok?.title} text={blok?.text} items={items} />
+</div>

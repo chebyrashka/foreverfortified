@@ -1,0 +1,9 @@
+---
+import ArticleIndex from "@/components/pages/ArticleIndex.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articles } from "@/data/site";
+---
+
+<BaseLayout title="Articles" description="Homeowner guides for roofing, siding, bathroom remodels, and project planning.">
+  <ArticleIndex articles={articles} />
+</BaseLayout>

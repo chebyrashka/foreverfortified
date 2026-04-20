@@ -1,0 +1,19 @@
+---
+import HomePage from "@/components/pages/HomePage.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { articles, company, featuredProject, processSteps, services, testimonials } from "@/data/site";
+---
+
+<BaseLayout
+  title="Forever Fortified"
+  description="Roofing, siding, and bathroom remodel services built for long-term value."
+>
+  <HomePage
+    company={company}
+    services={services}
+    testimonials={testimonials}
+    processSteps={processSteps}
+    articles={articles}
+    featuredProject={featuredProject}
+  />
+</BaseLayout>
