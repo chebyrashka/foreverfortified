@@ -2,6 +2,8 @@
 defineProps<{
   company: {
     name: string;
+    tagline?: string;
+    logoUrl?: string;
     phone: string;
     phoneHref?: string;
     email: string;
@@ -18,8 +20,9 @@ defineProps<{
     <div class="site-footer__inner">
       <div class="footer-brand">
         <a class="brand" href="/">
-          <span class="brand__mark" aria-hidden="true">FF</span>
-          <span>
+          <img v-if="company.logoUrl" class="brand__logo" :src="company.logoUrl" :alt="company.name" />
+          <span v-else class="brand__mark" aria-hidden="true">FF</span>
+          <span v-if="!company.logoUrl">
             <strong>{{ company.name }}</strong>
             <small>Roofing, siding, and bathroom remodels in {{ company.location }}.</small>
           </span>
@@ -77,6 +80,15 @@ defineProps<{
   display: inline-flex;
   align-items: center;
   gap: var(--size-3);
+}
+
+.brand__logo {
+  width: min(240px, 100%);
+  height: auto;
+  max-height: 112px;
+  object-fit: contain;
+  object-position: left center;
+  filter: invert(1);
 }
 
 .brand__mark {

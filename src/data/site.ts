@@ -4,6 +4,8 @@ export const global = globalContent;
 
 export const company = {
   name: globalContent.brand.name,
+  tagline: globalContent.brand.tagline,
+  logoUrl: globalContent.brand.logoUrl,
   phone: globalContent.contact.phoneDisplay,
   phoneHref: globalContent.contact.phoneHref,
   email: globalContent.contact.email,

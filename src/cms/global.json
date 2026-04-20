@@ -2,13 +2,14 @@
   "brand": {
     "name": "Forever Fortified",
     "tagline": "Built to hold up",
+    "logoUrl": "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/logo-foreverfortified.svg",
     "intro": "Forever Fortified helps homeowners improve, protect, and refresh their homes with roofing, siding, and bathroom remodel services designed for long-term value.",
     "heroImage": "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png"
   },
   "contact": {
-    "phoneDisplay": "(555) 013-4427",
-    "phoneHref": "+15550134427",
-    "email": "hello@foreverfortified.com",
+    "phoneDisplay": "(612) 345-2291",
+    "phoneHref": "+16123452291",
+    "email": "service@foreverfortified.com",
     "estimateUrl": "/contact/"
   },
   "serviceArea": {

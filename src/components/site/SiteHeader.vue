@@ -15,6 +15,8 @@ type Service = {
 const props = defineProps<{
   company: {
     name: string;
+    tagline?: string;
+    logoUrl?: string;
     phone: string;
     phoneHref?: string;
     estimateUrl: string;
@@ -50,10 +52,11 @@ onBeforeUnmount(() => {
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-header__inner">
       <a class="brand" href="/" aria-label="Forever Fortified home">
-        <span class="brand__mark" aria-hidden="true">FF</span>
-        <span class="brand__text">
+        <img v-if="company.logoUrl" class="brand__logo" :src="company.logoUrl" :alt="company.name" />
+        <span v-else class="brand__mark" aria-hidden="true">FF</span>
+        <span v-if="!company.logoUrl" class="brand__text">
           <strong>{{ company.name }}</strong>
-          <small>Built to hold up</small>
+          <small>{{ company.tagline || "Built to hold up" }}</small>
         </span>
       </a>
 
@@ -171,6 +174,13 @@ onBeforeUnmount(() => {
   align-items: center;
   gap: var(--size-3);
   min-width: max-content;
+}
+
+.brand__logo {
+  width: clamp(128px, 13vw, 172px);
+  height: 54px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .brand__mark {
