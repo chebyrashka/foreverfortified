@@ -180,7 +180,7 @@ onBeforeUnmount(() => {
   border-radius: var(--radius-sm);
   background: var(--color-iron);
   color: var(--color-warm-white);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.84rem;
   font-weight: 900;
 }
@@ -191,7 +191,7 @@ onBeforeUnmount(() => {
 }
 
 .brand__text strong {
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 1rem;
   line-height: 1;
 }
@@ -229,7 +229,7 @@ onBeforeUnmount(() => {
   background: transparent;
   color: rgb(31 36 33 / 0.78);
   padding: 0.55rem 0.65rem;
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.9rem;
   font-weight: 750;
 }
@@ -359,7 +359,7 @@ onBeforeUnmount(() => {
   .mobile-menu p {
     margin: var(--size-4) 0 var(--size-1);
     color: var(--color-copper);
-    font-family: var(--font-heading);
+    font-family: var(--font-label);
     font-size: 0.78rem;
     font-weight: 850;
     text-transform: uppercase;
@@ -368,7 +368,7 @@ onBeforeUnmount(() => {
   .mobile-menu a:not(.btn) {
     border-bottom: 1px solid rgb(31 36 33 / 0.1);
     padding: var(--size-4) 0;
-    font-family: var(--font-heading);
+    font-family: var(--font-label);
     font-size: 1.1rem;
     font-weight: 800;
   }

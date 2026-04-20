@@ -86,7 +86,7 @@ defineProps<{
   border: 1px solid rgb(255 255 255 / 0.18);
   border-radius: var(--radius-sm);
   color: var(--color-warm-white);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.84rem;
   font-weight: 900;
 }
@@ -96,7 +96,7 @@ nav p,
 .footer-contact p {
   display: block;
   margin: 0 0 var(--size-3);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-weight: 850;
 }
 

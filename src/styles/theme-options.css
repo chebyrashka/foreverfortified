@@ -1,0 +1,81 @@
+:root {
+  --preview-panel-bg: #f4f0e8;
+  --preview-panel-border: rgb(31 36 33 / 0.14);
+}
+
+:root[data-palette="forest"] {
+  --color-iron: #1f2421;
+  --color-graphite: #363a36;
+  --color-forest: #2f4a3d;
+  --color-copper: #b86a3d;
+  --color-copper-dark: #934f2d;
+  --color-warm-white: #f7f3ec;
+  --color-stone: #d8d2c7;
+  --color-stone-light: #ece7dd;
+  --color-black: #101311;
+  --shadow-soft: 0 18px 45px rgb(31 36 33 / 0.12);
+  --shadow-strong: 0 28px 70px rgb(31 36 33 / 0.22);
+}
+
+:root[data-palette="pine-bone"] {
+  --color-iron: #17231d;
+  --color-graphite: #334037;
+  --color-forest: #21432e;
+  --color-copper: #a86f42;
+  --color-copper-dark: #86552e;
+  --color-warm-white: #f6f1e8;
+  --color-stone: #d7d0c2;
+  --color-stone-light: #eee8dc;
+  --color-black: #0d1410;
+  --shadow-soft: 0 18px 45px rgb(23 35 29 / 0.13);
+  --shadow-strong: 0 28px 70px rgb(23 35 29 / 0.24);
+}
+
+:root[data-palette="olive-field"] {
+  --color-iron: #242a1f;
+  --color-graphite: #444c39;
+  --color-forest: #53663b;
+  --color-copper: #b08145;
+  --color-copper-dark: #8d6332;
+  --color-warm-white: #f5f0e3;
+  --color-stone: #d9d6c3;
+  --color-stone-light: #ebe8d8;
+  --color-black: #12150f;
+  --shadow-soft: 0 18px 45px rgb(36 42 31 / 0.12);
+  --shadow-strong: 0 28px 70px rgb(36 42 31 / 0.22);
+}
+
+:root[data-palette="emerald-slate"] {
+  --color-iron: #14211f;
+  --color-graphite: #2c3d3b;
+  --color-forest: #0f513c;
+  --color-copper: #c48a52;
+  --color-copper-dark: #9b683d;
+  --color-warm-white: #f4efe7;
+  --color-stone: #ced9d1;
+  --color-stone-light: #e8eee9;
+  --color-black: #0a1211;
+  --shadow-soft: 0 18px 45px rgb(20 33 31 / 0.13);
+  --shadow-strong: 0 28px 70px rgb(20 33 31 / 0.24);
+}
+
+:root[data-type="editorial"] {
+  --font-heading: "Newsreader", Georgia, serif;
+  --font-body: "Manrope", "Inter", system-ui, sans-serif;
+  --font-label: "Manrope", "Inter", system-ui, sans-serif;
+  --font-quote: "Newsreader", Georgia, serif;
+}
+
+:root[data-type="modern-serif"] {
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-label: "Inter", system-ui, sans-serif;
+  --font-quote: "Fraunces", Georgia, serif;
+}
+
+:root[data-type="modern-contractor"] {
+  --font-heading: "Sora", "Manrope", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Inter", system-ui, sans-serif;
+  --font-label: "Manrope", "Inter", system-ui, sans-serif;
+  --font-quote: "Newsreader", Georgia, serif;
+}

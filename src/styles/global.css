@@ -1,4 +1,6 @@
+@import url("https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,700|fraunces:400,500,600,700|inter:400,500,600,700,800|manrope:400,500,600,700,800|newsreader:400,500,600,700|sora:400,500,600,700,800&display=swap");
 @import "./tokens.css";
+@import "./theme-options.css";
 
 @font-face {
   font-family: "Inter";
@@ -83,7 +85,7 @@ button {
 .eyebrow {
   margin: 0 0 var(--size-3);
   color: var(--color-copper);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -122,7 +124,7 @@ button {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   padding: 0.82rem 1.05rem;
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.94rem;
   font-weight: 800;
   line-height: 1;

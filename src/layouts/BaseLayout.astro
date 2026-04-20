@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "@/components/site/SiteFooter.vue";
 import SiteHeader from "@/components/site/SiteHeader.vue";
+import SettingsPanel from "@/components/site/SettingsPanel.vue";
 import { company, navItems, services } from "@/data/site";
 import "@/styles/global.css";
 
@@ -25,6 +26,20 @@ const pageTitle = title === company.name ? title : `${title} | ${company.name}`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.svg" />
     <title>{pageTitle}</title>
+    <script is:inline>
+      (() => {
+        try {
+          const palette = window.localStorage.getItem("ff-palette") || "forest";
+          const type = window.localStorage.getItem("ff-type") || "original";
+          document.documentElement.dataset.palette = palette;
+          if (type !== "original") {
+            document.documentElement.dataset.type = type;
+          }
+        } catch {
+          document.documentElement.dataset.palette = "forest";
+        }
+      })();
+    </script>
   </head>
   <body>
     <div class="page-shell">
@@ -33,6 +48,7 @@ const pageTitle = title === company.name ? title : `${title} | ${company.name}`;
         <slot />
       </main>
       <SiteFooter company={company} navItems={navItems} services={services} />
+      <SettingsPanel client:load />
     </div>
   </body>
 </html>
