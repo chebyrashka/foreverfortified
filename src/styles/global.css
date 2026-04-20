@@ -1,12 +1,5 @@
+@import url("https://fonts.bunny.net/css?family=manrope:400,500,600,700,800|newsreader:400,500,600,700&display=swap");
 @import "./tokens.css";
-
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: local("Inter");
-}
 
 * {
   box-sizing: border-box;
@@ -83,7 +76,7 @@ button {
 .eyebrow {
   margin: 0 0 var(--size-3);
   color: var(--color-copper);
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -95,7 +88,7 @@ button {
   color: var(--color-iron);
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 0.98;
 }
 
@@ -122,7 +115,7 @@ button {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   padding: 0.82rem 1.05rem;
-  font-family: var(--font-heading);
+  font-family: var(--font-label);
   font-size: 0.94rem;
   font-weight: 800;
   line-height: 1;
