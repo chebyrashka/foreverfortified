@@ -5,9 +5,9 @@ export const company = {
   location: "Minnesota",
   estimateUrl: "/contact/",
   heroImage:
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=82",
+    "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png",
   intro:
-    "Forever Fortified helps homeowners protect, renew, and elevate their homes with roofing, siding, and bathroom remodel work shaped around long-term value."
+    "Forever Fortified helps homeowners improve, protect, and refresh their homes with roofing, siding, and bathroom remodel services designed for long-term value."
 };
 
 export const navItems = [
@@ -61,7 +61,7 @@ export const services = [
     eyebrow: "Siding",
     headline: "Siding that strengthens your home from the outside in.",
     summary:
-      "Refresh curb appeal, improve durability, and give the whole exterior a cleaner, more rooted presence.",
+      "Refresh curb appeal, improve durability, and reduce maintenance with siding work that gives the whole exterior a cleaner, stronger presence.",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80",
     cta: "Explore Siding",
@@ -209,5 +209,5 @@ export const featuredProject = {
   text:
     "A focused exterior update can change how a home feels from the curb while adding better long-term protection from weather and wear.",
   image:
-    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=82"
+    "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=80"
 };

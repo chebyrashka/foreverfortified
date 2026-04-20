@@ -55,7 +55,7 @@ defineProps<{
       <div class="hero__content container-wide">
         <div class="hero__copy">
           <p class="hero__eyebrow">Roofing. Siding. Bathroom remodels.</p>
-          <h1>Built to protect. Finished to impress.</h1>
+          <h1>Exterior and remodeling work built to hold up.</h1>
           <p>{{ company.intro }}</p>
           <div class="button-row">
             <a class="btn btn-primary" :href="company.estimateUrl">
@@ -137,13 +137,13 @@ defineProps<{
         </div>
         <div class="why-copy">
           <p>
-            Every recommendation should help the home look sharper, weather better, and feel easier to live with. The
-            work should feel measured, clear, and cared for from the first walkthrough to the final cleanup.
+            The design should make the company feel specific: sturdy recommendations, clean communication, and work
+            that respects the home before, during, and after the project.
           </p>
           <div class="why-list">
-            <span>Weather-ready planning</span>
+            <span>Weather-ready thinking</span>
             <span>Cleaner project communication</span>
-            <span>Materials chosen for long-term value</span>
+            <span>Materials matched to long-term value</span>
             <span>Respect for the finished home</span>
           </div>
         </div>
@@ -271,8 +271,8 @@ defineProps<{
 
 .hero__shade {
   background:
-    linear-gradient(90deg, rgb(13 20 16 / 0.88), rgb(36 67 50 / 0.6) 44%, rgb(36 67 50 / 0.12)),
-    linear-gradient(0deg, rgb(13 20 16 / 0.66), transparent 42%);
+    linear-gradient(90deg, rgb(16 19 17 / 0.88), rgb(16 19 17 / 0.58) 42%, rgb(16 19 17 / 0.18)),
+    linear-gradient(0deg, rgb(16 19 17 / 0.68), transparent 42%);
 }
 
 .hero__content {
@@ -303,8 +303,8 @@ defineProps<{
   margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(3.1rem, 8.4vw, 7.4rem);
-  font-weight: 700;
-  line-height: 0.88;
+  font-weight: 900;
+  line-height: 0.91;
 }
 
 .hero__copy > p:not(.hero__eyebrow) {
@@ -321,7 +321,7 @@ defineProps<{
   overflow: hidden;
   border: 1px solid rgb(255 255 255 / 0.18);
   border-radius: var(--radius-md);
-  background: rgb(124 140 104 / 0.18);
+  background: rgb(255 255 255 / 0.12);
   backdrop-filter: blur(16px);
 }
 
@@ -460,9 +460,7 @@ defineProps<{
 }
 
 .why-band {
-  background:
-    linear-gradient(135deg, rgb(124 140 104 / 0.2), transparent 42%),
-    var(--color-stone-light);
+  background: var(--color-stone-light);
 }
 
 .why-grid {
@@ -486,9 +484,9 @@ defineProps<{
 
 .why-list span {
   border-left: 3px solid var(--color-copper);
-  background: rgb(255 255 255 / 0.68);
+  background: rgb(255 255 255 / 0.6);
   padding: var(--size-4);
-  font-family: var(--font-label);
+  font-family: var(--font-heading);
   font-weight: 800;
 }
 
