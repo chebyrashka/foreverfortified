@@ -16,6 +16,7 @@ const props = defineProps<{
   company: {
     name: string;
     phone: string;
+    phoneHref?: string;
     estimateUrl: string;
   };
   navItems: NavItem[];
@@ -81,7 +82,7 @@ onBeforeUnmount(() => {
       </nav>
 
       <div class="header-actions">
-        <a class="phone-link" :href="`tel:${company.phone.replace(/[^0-9]/g, '')}`">
+        <a class="phone-link" :href="`tel:${company.phoneHref || company.phone.replace(/[^0-9]/g, '')}`">
           {{ company.phone }}
         </a>
         <a class="btn btn-primary header-cta" :href="company.estimateUrl">

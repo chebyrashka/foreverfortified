@@ -45,6 +45,12 @@ const typePairings: TypeOption[] = [
     label: "Literata · Manrope",
     note: "Refined serif",
     sampleFamily: "\"Literata\", Georgia, serif"
+  },
+  {
+    id: "condensed",
+    label: "Roboto Condensed · Atkinson",
+    note: "Condensed",
+    sampleFamily: "\"Roboto Condensed\", \"Arial Narrow\", sans-serif"
   }
 ];
 

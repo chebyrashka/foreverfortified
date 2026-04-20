@@ -95,6 +95,15 @@
   --font-display-weight: 900;
 }
 
+:root[data-type="condensed"] {
+  --font-heading: "Roboto Condensed", "Arial Narrow", "Manrope", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Inter", system-ui, sans-serif;
+  --font-label: "Manrope", "Inter", system-ui, sans-serif;
+  --font-quote: "Source Serif 4", Georgia, serif;
+  --font-heading-weight: 700;
+  --font-display-weight: 700;
+}
+
 :root[data-type="editorial"],
 :root[data-type="modern-serif"] {
   --font-heading: "Source Serif 4", Georgia, serif;

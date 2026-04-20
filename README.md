@@ -31,6 +31,12 @@ Edit `src/styles/tokens.css` to adjust colors, typography, spacing, radii, shado
 
 `src/styles/global.css` imports the token file and defines shared global utility styles.
 
+Preview-only palette/type overrides live in `src/styles/theme-options.css`.
+
+## Local CMS Content
+
+Global business content lives in `src/cms/global.json` for now. Use it for shared brand, phone, email, service area, hours, and social URL values until Storyblok is connected.
+
 ## Storyblok
 
 Copy `.env.example` to `.env` and add the Storyblok delivery token when the space is ready:

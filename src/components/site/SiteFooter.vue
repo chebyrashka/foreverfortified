@@ -3,6 +3,7 @@ defineProps<{
   company: {
     name: string;
     phone: string;
+    phoneHref?: string;
     email: string;
     location: string;
     estimateUrl: string;
@@ -40,7 +41,7 @@ defineProps<{
 
       <div class="footer-contact">
         <p>Start a project</p>
-        <a :href="`tel:${company.phone.replace(/[^0-9]/g, '')}`">{{ company.phone }}</a>
+        <a :href="`tel:${company.phoneHref || company.phone.replace(/[^0-9]/g, '')}`">{{ company.phone }}</a>
         <a :href="`mailto:${company.email}`">{{ company.email }}</a>
         <a class="btn btn-light" :href="company.estimateUrl">
           Request Estimate

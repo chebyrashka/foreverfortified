@@ -1,14 +1,19 @@
+import globalContent from "@/cms/global.json";
+
+export const global = globalContent;
+
 export const company = {
-  name: "Forever Fortified",
-  phone: "(555) 013-4427",
-  email: "hello@foreverfortified.com",
-  location: "Minnesota",
-  estimateUrl: "/contact/",
-  heroImage:
-    "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png",
-  intro:
-    "Forever Fortified helps homeowners improve, protect, and refresh their homes with roofing, siding, and bathroom remodel services designed for long-term value."
+  name: globalContent.brand.name,
+  phone: globalContent.contact.phoneDisplay,
+  phoneHref: globalContent.contact.phoneHref,
+  email: globalContent.contact.email,
+  location: globalContent.serviceArea.primaryRegion,
+  estimateUrl: globalContent.contact.estimateUrl,
+  heroImage: globalContent.brand.heroImage,
+  intro: globalContent.brand.intro
 };
+
+export const socialLinks = globalContent.social;
 
 export const navItems = [
   { label: "Roofing", href: "/roofing/" },

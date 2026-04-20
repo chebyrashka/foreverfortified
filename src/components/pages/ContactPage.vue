@@ -2,6 +2,7 @@
 defineProps<{
   company: {
     phone: string;
+    phoneHref?: string;
     email: string;
   };
 }>();
@@ -18,7 +19,7 @@ defineProps<{
           connected without changing the visual design.
         </p>
         <div class="contact-methods">
-          <a :href="`tel:${company.phone.replace(/[^0-9]/g, '')}`">{{ company.phone }}</a>
+          <a :href="`tel:${company.phoneHref || company.phone.replace(/[^0-9]/g, '')}`">{{ company.phone }}</a>
           <a :href="`mailto:${company.email}`">{{ company.email }}</a>
         </div>
       </div>
