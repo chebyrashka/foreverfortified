@@ -3,8 +3,32 @@
     "name": "Forever Fortified",
     "tagline": "Built to hold up",
     "logoUrl": "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/logo-foreverfortified.svg",
-    "intro": "Forever Fortified helps homeowners improve, protect, and refresh their homes with roofing, siding, and bathroom remodel services designed for long-term value.",
-    "heroImage": "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png"
+    "intro": "Forever Fortified helps homeowners improve, protect, and refresh their homes with roofing, siding, gutters, and bathroom remodel services designed for long-term value.",
+    "heroImage": "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png",
+    "heroCopyActive": "stronger-home",
+    "heroCopyOptions": [
+      {
+        "id": "stronger-home",
+        "label": "Stronger Home",
+        "eyebrow": "Roofing. Siding. Gutters. Bathroom remodels.",
+        "headline": "Make your home stronger, cleaner, and ready for what is next.",
+        "intro": "Forever Fortified brings honest guidance, clean craftsmanship, and durable material choices to every project, so your home looks sharp and holds strong long after the work is done."
+      },
+      {
+        "id": "built-to-hold-up",
+        "label": "Built to Hold Up",
+        "eyebrow": "Roofing. Siding. Gutters. Bathroom remodels.",
+        "headline": "Refresh your home with work built to hold up.",
+        "intro": "Start with the roof, siding, gutters, or bathroom that needs attention most, then get clear recommendations and careful work from the first walkthrough to the final cleanup."
+      },
+      {
+        "id": "lasting-confidence",
+        "label": "Lasting Confidence",
+        "eyebrow": "Roofing. Siding. Gutters. Bathroom remodels.",
+        "headline": "Bring lasting confidence back to your home.",
+        "intro": "When something feels worn, leaking, dated, or overdue, get a clear plan for improving it with durable materials, steady communication, and work that respects your home."
+      }
+    ]
   },
   "contact": {
     "phoneDisplay": "(612) 345-2291",
@@ -14,7 +38,7 @@
   },
   "serviceArea": {
     "primaryRegion": "Minnesota",
-    "summary": "Serving Minnesota homeowners with roofing, siding, and bathroom remodel services."
+    "summary": "Serving Minnesota homeowners with roofing, siding, gutters, and bathroom remodel services."
   },
   "social": {
     "facebook": "",

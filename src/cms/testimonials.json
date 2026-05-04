@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Kathleen Ford",
+    "service": "Home improvement",
+    "source": "Customer review",
+    "quote": "Adam from Forever Fortified was responsive to our needs, and was able to finish the projects in a very timely manner.",
+    "fullQuote": "We recently purchased a house and needed quite a few small projects completed, some recommended by an inspector. Adam from Forever Fortified was responsive to our needs, and was able to finish the projects in a very timely manner. It made move-in much easier and safer as well, since some of the work involved bringing things up to code. There was no job too large or too small for him. He was honest about pricing and whether something recommended should be completed. Adam is very knowledgeable in many areas regarding completing things up to code. and sought out information if he didn't know it. I would highly recommend Adam from Forever Fortified for home improvement projects! We are very satisfied with his work."
+  },
+  {
+    "name": "Erika Sanborne",
+    "service": "Roofing",
+    "source": "Customer review",
+    "featured": true,
+    "quote": "Excellent experience. Adam was thoughtful and knowledgeable. Fair price and awesome results.",
+    "fullQuote": "Excellent experience. Adam was thoughtful and knowledgeable. Fair price and awesome results. Nice new roof and skylight, appropriate flashing everywhere including the giant chimney. Adam also shared an video final walk thru with voiceover, pointing out details that I'm glad to know about our roof. We made the right choice in a roofing company."
+  },
+  {
+    "name": "Ardell Narveson",
+    "service": "Bathroom",
+    "source": "Customer review",
+    "quote": "We love the new faucets and were very happy with the service we got.",
+    "fullQuote": "Adam and his coworker went Well above and beyond to install our new bathroom faucets. Our house is 31 years old and they were original. They had many problems but handled everything. We love the new faucets and were very happy with the service we got. Thank you both."
+  },
+  {
+    "name": "Joe Sheridan",
+    "service": "Roofing",
+    "source": "Customer review",
+    "quote": "I cannot recommend him enough as an honest, high quality, and responsive company!",
+    "fullQuote": "Adam and his team went above and beyond to address a roof leak in our new home. He was able to provide exceptional counsel on our potential options and, since he was already on the roof doing an assessment, sealed the gap and fixed the leak free of charge to allow us time to fully consider our options. I cannot recommend him enough as an honest, high quality, and responsive company!"
+  },
+  {
+    "name": "Peggy Britton",
+    "service": "Gutters",
+    "source": "Customer review",
+    "featured": true,
+    "quote": "The gutter looks and works great and from start to finish communication was a priority.",
+    "fullQuote": "I recently had Forever Fortified do a gutter project at my home. Dustin and Adam were so professional and really cared about helping me! The gutter looks and works great and from start to finish communication was a priority. That is important to me. I would forever recommend them, just the best!"
+  },
+  {
+    "name": "Josh Schultz",
+    "service": "Remodeling",
+    "source": "Customer review",
+    "featured": true,
+    "quote": "Finally, a very genuine company which is hard to find in the remodeling industry.",
+    "fullQuote": "Finally, a very genuine company which is hard to find in the remodeling industry.  We had countless pushy salespeople who had their best interest in mind.....but not Forever Fortified.  They answered all our questions and went at the pace we needed.  I couldn't be more impressed with their professionalism.  The job turned out perfect, including great service with a follow up after the job was done.  Very competitively priced and I can't say enough good things about Dustin and his team. A+++++++"
+  },
+  {
+    "name": "Don Brewer",
+    "service": "Home improvement",
+    "source": "Customer review",
+    "quote": "Excellent communication before, during and after the project.",
+    "fullQuote": "Excellent communication before, during and after the project.  Next day estimate for the project where other companies were over a week.  Only company that explained the entire process and why it needed to be completed in a certain way to ensure the problem was completely fixed.  If we need anything in the future Forever Fortified will be the company we use because we trust their expertise.  Great experience!"
+  },
+  {
+    "name": "Mary Wick",
+    "service": "Home repair",
+    "source": "Customer review",
+    "quote": "Just knowing we finally have someone that we can contact when problems arise is such a relief.",
+    "fullQuote": "I am an out-of-town co-owner of a home in Minneapolis that has needed lots of repair work done recently.  After meeting Adam, we felt we found someone we could trust to help us.  He didn't prove us wrong!  Several projects we had him work on were all done as he had explained he would do them.  He took care of cleaning up as well.  Just knowing we finally have someone that we can contact when problems arise is such a relief.  If you are looking for someone punctual, responsible and knowledgeable, you should try this company.  We will be contacting him again when we need work done!"
+  },
+  {
+    "name": "Trish F",
+    "service": "Gutters",
+    "source": "Customer review",
+    "quote": "Dustin did a wonderful job repairing my gutters. He was friendly, quick, and honest.",
+    "fullQuote": "Dustin did a wonderful job repairing my gutters. He was friendly, quick, and honest. Would highly recommend!"
+  },
+  {
+    "name": "Kyle Sandstrom",
+    "service": "Siding",
+    "source": "Customer review",
+    "quote": "From start to finish they were great to work with and very professional.",
+    "fullQuote": "Adam and Dustin with Forever Fortified did a fantastic job with our siding project! From start to finish they were great to work with and very professional. I contacted them for an estimate and they came the next day and did a thorough walk around the property and gave us a couple of estimates with different options  within days. They're really great to work with and made sure everything was perfect in the end. High recommend them and will be using them for future work as well."
+  }
+]

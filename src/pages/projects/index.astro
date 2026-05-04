@@ -1,9 +1,9 @@
 ---
 import ProjectIndex from "@/components/pages/ProjectIndex.vue";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { featuredProject } from "@/data/site";
+import { company, testimonials } from "@/data/site";
 ---
 
-<BaseLayout title="Recent Work" description="Recent Forever Fortified project stories and before/after work.">
-  <ProjectIndex project={featuredProject} />
+<BaseLayout title="Past Projects" description="Explore Forever Fortified project examples, finishes, and homeowner feedback.">
+  <ProjectIndex estimateUrl={company.estimateUrl} testimonials={testimonials} />
 </BaseLayout>

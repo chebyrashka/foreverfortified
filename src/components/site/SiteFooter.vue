@@ -24,7 +24,7 @@ defineProps<{
           <span v-else class="brand__mark" aria-hidden="true">FF</span>
           <span v-if="!company.logoUrl">
             <strong>{{ company.name }}</strong>
-            <small>Roofing, siding, and bathroom remodels in {{ company.location }}.</small>
+            <small>Roofing, siding, gutters, and bathroom remodels in {{ company.location }}.</small>
           </span>
         </a>
         <p>
@@ -56,7 +56,7 @@ defineProps<{
     </div>
     <div class="footer-bottom">
       <span>Copyright {{ new Date().getFullYear() }} {{ company.name }}.</span>
-      <span>Built for clarity, trust, and long-term growth.</span>
+      <span>Quality work, clear communication, and no nonsense.</span>
     </div>
   </footer>
 </template>
@@ -83,9 +83,9 @@ defineProps<{
 }
 
 .brand__logo {
-  width: min(240px, 100%);
+  width: min(210px, 100%);
   height: auto;
-  max-height: 112px;
+  max-height: 96px;
   object-fit: contain;
   object-position: left center;
   filter: invert(1);
@@ -146,6 +146,7 @@ nav a:hover,
 .footer-contact .btn {
   width: fit-content;
   margin-top: var(--size-2);
+  border-color: transparent;
 }
 
 .footer-bottom {

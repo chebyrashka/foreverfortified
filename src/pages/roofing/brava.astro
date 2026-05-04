@@ -1,0 +1,455 @@
+---
+import ServiceRequestForm from "@/components/site/ServiceRequestForm.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const products = [
+  {
+    title: "Brava Cedar Shake",
+    text:
+      "The dimension and texture of natural hand-split cedar, without the rot, splitting, fading, or ongoing fire-treatment concerns that can come with real wood.",
+    image: "/images/brands/brava/beechwood-shake.jpg",
+    imagePosition: "50% 50%"
+  },
+  {
+    title: "Brava Old World Slate",
+    text:
+      "A slate-inspired profile with blended color and substantial shadow lines, planned without the weight and structural concerns of natural quarried slate.",
+    image: "/images/brands/brava/cool-atlantic-slate.jpg",
+    imagePosition: "50% 50%"
+  },
+  {
+    title: "Brava Spanish Tile",
+    text:
+      "A warm barrel-tile look for Mediterranean, Spanish, and statement homes, with composite performance and a lighter installation profile than clay.",
+    image: "/images/brands/brava/tuscan-clay-spanish-tile.jpg",
+    imagePosition: "50% 50%"
+  }
+];
+
+const performanceItems = [
+  {
+    value: "Class 4",
+    label: "impact resistance",
+    text: "Brava is certified for the highest impact-resistance level used for roofing materials."
+  },
+  {
+    value: "50-year",
+    label: "limited warranty",
+    text: "A long warranty window helps homeowners and HOAs plan around long-term performance."
+  },
+  {
+    value: "Class A or C",
+    label: "fire rating options",
+    text: "Fire-rated assemblies are available depending on the product and installation specification."
+  },
+  {
+    value: "100%",
+    label: "recycled material",
+    text: "Brava tiles are made from recycled material and can be recycled again when replacement is needed."
+  }
+];
+
+const planningPoints = [
+  "HOA-friendly profiles that preserve a cohesive architectural look across a community.",
+  "A lightweight design that can often be installed without costly structural modifications.",
+  "Patented blended coloration with natural-mineral color variation through each tile.",
+  "Synthetic cedar, slate, and Spanish tile options for homes that need a specific roof character.",
+  "Color flexibility that helps match existing exterior materials, neighborhood standards, and homeowner preferences.",
+  "Reduced maintenance concerns compared with natural wood shake, clay tile, or quarried slate."
+];
+---
+
+<BaseLayout
+  title="Brava Roof Tile"
+  description="Brava composite roof tile options from Forever Fortified, including cedar shake, old world slate, and Spanish tile roofing."
+>
+  <article class="brava-page">
+    <section class="brava-hero">
+      <div class="brava-hero__image">
+        <img src="/images/brands/brava/blue-flax-avon-roof.jpg" alt="Brava composite roof tile installed on a home" />
+      </div>
+      <div class="brava-hero__copy">
+        <img class="brava-logo" src="/images/brands/brava/brava-logo.svg" alt="Brava Roof Tile" />
+        <p class="eyebrow">Composite roof tile</p>
+        <h1>Natural roof character with composite strength.</h1>
+        <p>
+          Brava roofing gives homeowners and HOAs the look of cedar shake, slate, or clay tile with a lighter,
+          recycled composite roof system built for wind, rain, hail, fire, and sun.
+        </p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="#request-service">
+            Request a Brava Estimate
+            <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 8h9M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+          </a>
+          <a class="btn btn-secondary" href="#profiles">Compare Profiles</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section brava-intro">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">Why Brava</p>
+          <h2 class="section-title">A premium alternative when asphalt is too ordinary and natural materials are too demanding.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            Brava is built for homes and communities where the roof needs to carry real architectural weight. Its
+            synthetic tiles mirror the color, texture, and irregularity of natural materials while avoiding common
+            issues like wood shake maintenance, slate weight, clay brittleness, and color fading.
+          </p>
+          <p>
+            For HOA communities, that means residents can keep a consistent, high-end roof style while choosing a
+            material designed for practical installation, long-term durability, and easier upkeep.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="profiles" class="section brava-profiles">
+      <div class="container-wide">
+        <div class="section-heading">
+          <p class="eyebrow">Product profiles</p>
+          <h2 class="section-title">Three looks, one durable composite roof family.</h2>
+        </div>
+        <div class="profile-grid">
+          {
+            products.map((product) => (
+              <article class="profile-card">
+                <img
+                  class="profile-card__image"
+                  src={product.image}
+                  alt={`${product.title} roof tile detail`}
+                  style={`object-position: ${product.imagePosition}`}
+                />
+                <h3>{product.title}</h3>
+                <p>{product.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section brava-performance">
+      <div class="container">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow">Performance</p>
+          <h2 class="section-title">Built for the roof problems homeowners actually worry about.</h2>
+        </div>
+        <div class="performance-grid">
+          {
+            performanceItems.map((item) => (
+              <article>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+                <p>{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section brava-planning">
+      <div class="container planning-grid">
+        <div>
+          <p class="eyebrow">Planning fit</p>
+          <h2 class="section-title">A strong option for statement homes, HOA communities, and long-term exterior upgrades.</h2>
+          <p class="section-copy">
+            Brava makes sense when the finished roof needs to look intentional from the street, fit the surrounding
+            architecture, and reduce the compromises that come with natural cedar, slate, or clay.
+          </p>
+        </div>
+        <ul class="planning-list">
+          {planningPoints.map((point) => <li>{point}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section brava-sustainability">
+      <div class="container sustainability-grid">
+        <div class="sustainability-card">
+          <p class="eyebrow">Sustainability</p>
+          <h2>Recycled, recyclable, and designed to avoid unnecessary natural resource use.</h2>
+        </div>
+        <div class="sustainability-copy">
+          <p>
+            Brava turns recycled plastics and other sustainable materials into roof tiles that can be recycled again.
+            That helps reduce landfill load and avoids harvesting trees for shake, quarrying slate, or extracting clay
+            for traditional tile.
+          </p>
+          <p>
+            The tiles are also lighter than many traditional roofing systems, which can simplify project planning and
+            reduce transport weight compared with heavier natural materials.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="request-service" class="section request-service">
+      <div class="container request-grid">
+        <div>
+          <p class="eyebrow">Request service</p>
+          <h2 class="section-title">Let us help you decide whether Brava fits your roof.</h2>
+          <p class="section-copy">
+            Share a few details about the home, roof style, HOA requirements, and the look you want. We’ll help compare
+            Brava profiles, performance needs, and next steps.
+          </p>
+        </div>
+        <ServiceRequestForm client:load service-title="Brava Roof Tile" service-slug="roofing-brava" />
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .brava-page {
+    --brava-navy: #081f2d;
+    --brava-orange: #e04403;
+    --brava-clay: #b64a22;
+    --brava-slate: #34434a;
+    --brava-cedar: #7c563b;
+    background: var(--color-warm-white);
+  }
+
+  .brava-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+    min-height: calc(88svh - var(--header-height));
+    background: var(--color-warm-white);
+  }
+
+  .intro-grid,
+  .planning-grid,
+  .sustainability-grid,
+  .request-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+  }
+
+  .brava-hero__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    object-fit: cover;
+    object-position: 52% 46%;
+  }
+
+  .brava-hero__copy {
+    display: grid;
+    align-content: center;
+    padding: clamp(2rem, 7vw, 6rem);
+  }
+
+  .brava-logo {
+    width: min(230px, 62vw);
+    margin-bottom: var(--size-6);
+  }
+
+  .brava-hero .eyebrow {
+    color: var(--color-copper);
+  }
+
+  .brava-hero h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(2.7rem, 5.6vw, 6.2rem);
+    font-weight: var(--font-display-weight);
+    line-height: 0.94;
+  }
+
+  .brava-hero__copy > p:not(.eyebrow) {
+    max-width: 62ch;
+    margin: var(--size-5) 0 var(--size-8);
+    color: rgb(31 36 33 / 0.75);
+    font-size: 1.12rem;
+  }
+
+  .brava-hero .btn-secondary {
+    border-color: rgb(31 36 33 / 0.26);
+    background: rgb(247 243 236 / 0.74);
+    color: var(--color-iron);
+  }
+
+  .brava-intro,
+  .brava-profiles,
+  .brava-sustainability {
+    background: var(--color-white);
+  }
+
+  .brava-intro .intro-grid {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    align-items: start;
+  }
+
+  .intro-copy,
+  .sustainability-copy {
+    display: grid;
+    gap: var(--size-4);
+  }
+
+  .intro-copy p,
+  .sustainability-copy p {
+    margin: 0;
+    color: rgb(31 36 33 / 0.74);
+    font-size: 1.1rem;
+  }
+
+  .section-heading {
+    max-width: 820px;
+    margin-bottom: var(--size-10);
+  }
+
+  .section-heading--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .profile-grid,
+  .performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--size-5);
+  }
+
+  .profile-card,
+  .performance-grid article {
+    overflow: hidden;
+    border: 1px solid rgb(31 36 33 / 0.1);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+  }
+
+  .performance-grid article {
+    padding: var(--size-6);
+  }
+
+  .profile-card {
+    display: grid;
+    align-content: start;
+  }
+
+  .profile-card__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .profile-card h3,
+  .sustainability-card h2 {
+    margin: 0;
+    color: var(--color-iron);
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    line-height: 1.08;
+  }
+
+  .profile-card h3 {
+    padding: var(--size-6) var(--size-6) 0;
+  }
+
+  .profile-card p,
+  .performance-grid p {
+    margin: var(--size-4) 0 0;
+    color: rgb(31 36 33 / 0.68);
+  }
+
+  .profile-card p {
+    padding: 0 var(--size-6) var(--size-6);
+  }
+
+  .brava-performance,
+  .brava-planning,
+  .request-service {
+    background: var(--color-stone-light);
+  }
+
+  .performance-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .performance-grid strong {
+    display: block;
+    color: var(--brava-orange);
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 2.4vw, 2.15rem);
+    line-height: 0.95;
+  }
+
+  .performance-grid span {
+    display: block;
+    margin-top: var(--size-2);
+    color: var(--color-iron);
+    font-family: var(--font-label);
+    font-size: 0.84rem;
+    font-weight: 850;
+    text-transform: uppercase;
+  }
+
+  .planning-list {
+    display: grid;
+    gap: var(--size-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .planning-list li {
+    border: 1px solid rgb(31 36 33 / 0.1);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    padding: var(--size-5);
+    color: rgb(31 36 33 / 0.76);
+    font-weight: 700;
+  }
+
+  .sustainability-card {
+    min-height: 360px;
+    display: grid;
+    align-content: end;
+    border-radius: var(--radius-md);
+    background: var(--color-forest);
+    padding: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .sustainability-card .eyebrow,
+  .sustainability-card h2 {
+    color: var(--color-white);
+  }
+
+  .sustainability-card h2 {
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+  }
+
+  @media (max-width: 980px) {
+    .brava-hero,
+    .intro-grid,
+    .planning-grid,
+    .sustainability-grid,
+    .request-grid,
+    .profile-grid,
+    .performance-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .brava-hero__image img {
+      min-height: 380px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .brava-hero {
+      min-height: auto;
+    }
+
+    .brava-hero__copy {
+      padding-inline: var(--gutter);
+    }
+  }
+</style>

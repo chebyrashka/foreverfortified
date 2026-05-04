@@ -1,9 +1,9 @@
 ---
 import AboutPage from "@/components/pages/AboutPage.vue";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { company } from "@/data/site";
+import { company, testimonials } from "@/data/site";
 ---
 
-<BaseLayout title="About" description="Learn about the Forever Fortified approach to roofing, siding, and bathroom remodel work.">
-  <AboutPage company={company} />
+<BaseLayout title="About" description="Learn about the Forever Fortified approach to roofing, siding, gutters, and bathroom remodel work.">
+  <AboutPage company={company} testimonials={testimonials} />
 </BaseLayout>

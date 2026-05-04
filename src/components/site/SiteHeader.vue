@@ -34,6 +34,14 @@ const serviceLinks = computed(() =>
   }))
 );
 
+const logoMaskStyle = computed(() =>
+  props.company.logoUrl
+    ? {
+        "--brand-logo-url": `url("${props.company.logoUrl}")`
+      }
+    : undefined
+);
+
 watch(isOpen, (value) => {
   if (typeof document !== "undefined") {
     document.body.classList.toggle("menu-open", value);
@@ -52,7 +60,13 @@ onBeforeUnmount(() => {
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-header__inner">
       <a class="brand" href="/" aria-label="Forever Fortified home">
-        <img v-if="company.logoUrl" class="brand__logo" :src="company.logoUrl" :alt="company.name" />
+        <span
+          v-if="company.logoUrl"
+          class="brand__logo"
+          :style="logoMaskStyle"
+          role="img"
+          :aria-label="company.name"
+        />
         <span v-else class="brand__mark" aria-hidden="true">FF</span>
         <span v-if="!company.logoUrl" class="brand__text">
           <strong>{{ company.name }}</strong>
@@ -177,10 +191,12 @@ onBeforeUnmount(() => {
 }
 
 .brand__logo {
+  display: block;
   width: clamp(128px, 13vw, 172px);
   height: 54px;
-  object-fit: contain;
-  object-position: left center;
+  background: var(--color-copper);
+  mask: var(--brand-logo-url) left center / contain no-repeat;
+  -webkit-mask: var(--brand-logo-url) left center / contain no-repeat;
 }
 
 .brand__mark {
@@ -228,6 +244,15 @@ onBeforeUnmount(() => {
   position: relative;
 }
 
+.nav-group::after {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  height: var(--size-3);
+  content: "";
+}
+
 .nav-link,
 .nav-trigger,
 .phone-link {
@@ -238,15 +263,27 @@ onBeforeUnmount(() => {
   border: 0;
   border-radius: var(--radius-sm);
   background: transparent;
-  color: rgb(31 36 33 / 0.78);
   padding: 0.55rem 0.65rem;
   font-family: var(--font-label);
   font-size: 0.9rem;
   font-weight: 750;
 }
 
+.nav-link,
+.nav-trigger {
+  color: var(--color-copper);
+}
+
+.phone-link {
+  color: rgb(31 36 33 / 0.78);
+}
+
 .nav-link:hover,
-.nav-trigger:hover,
+.nav-trigger:hover {
+  color: var(--color-copper-dark);
+  background: rgb(47 94 64 / 0.08);
+}
+
 .phone-link:hover {
   color: var(--color-iron);
   background: rgb(31 36 33 / 0.06);
@@ -259,7 +296,7 @@ onBeforeUnmount(() => {
 
 .service-menu {
   position: absolute;
-  top: calc(100% + var(--size-2));
+  top: calc(100% + var(--size-1));
   left: 0;
   display: grid;
   min-width: 220px;
@@ -286,12 +323,13 @@ onBeforeUnmount(() => {
 .service-menu a {
   border-radius: var(--radius-sm);
   padding: var(--size-3);
-  color: var(--color-iron);
+  color: var(--color-copper);
   font-weight: 750;
 }
 
 .service-menu a:hover {
   background: var(--color-stone-light);
+  color: var(--color-copper-dark);
 }
 
 .header-actions {
@@ -378,6 +416,7 @@ onBeforeUnmount(() => {
 
   .mobile-menu a:not(.btn) {
     border-bottom: 1px solid rgb(31 36 33 / 0.1);
+    color: var(--color-copper);
     padding: var(--size-4) 0;
     font-family: var(--font-label);
     font-size: 1.1rem;

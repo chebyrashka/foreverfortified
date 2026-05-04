@@ -1,28 +1,34 @@
 <script setup lang="ts">
-defineProps<{
-  eyebrow?: string;
-  title?: string;
-  items: Array<{
-    quote: string;
-    name?: string;
-    meta?: string;
-  }>;
-}>();
+withDefaults(
+  defineProps<{
+    eyebrow?: string;
+    title?: string;
+    items: Array<{
+      quote: string;
+      name?: string;
+      meta?: string;
+    }>;
+  }>(),
+  {
+    eyebrow: "Homeowner proof",
+    title: "The kind of work people are happy to recommend."
+  }
+);
 </script>
 
 <template>
   <section class="section sb-testimonials">
     <div class="container">
       <div class="sb-testimonials__heading">
-        <p v-if="eyebrow" class="eyebrow">{{ eyebrow }}</p>
-        <h2 v-if="title" class="section-title">{{ title }}</h2>
+        <p class="eyebrow">{{ eyebrow }}</p>
+        <h2 class="section-title">{{ title }}</h2>
       </div>
       <div class="sb-testimonials__grid">
         <figure v-for="item in items" :key="item.quote">
           <blockquote>{{ item.quote }}</blockquote>
           <figcaption>
             <strong>{{ item.name || "Homeowner" }}</strong>
-            <span>{{ item.meta }}</span>
+            <span v-if="item.meta">{{ item.meta }}</span>
           </figcaption>
         </figure>
       </div>
@@ -50,15 +56,19 @@ defineProps<{
 figure {
   display: grid;
   align-content: space-between;
+  min-width: 0;
   min-height: 300px;
   margin: 0;
+  border: 1px solid rgb(31 36 33 / 0.1);
   border-radius: var(--radius-md);
   background: var(--color-white);
   padding: var(--size-6);
 }
 
 blockquote {
+  min-width: 0;
   margin: 0;
+  color: var(--color-iron);
   font-family: var(--font-quote);
   font-size: clamp(1.24rem, 2vw, 1.65rem);
   line-height: 1.2;
@@ -76,6 +86,12 @@ figcaption strong {
 
 figcaption span {
   color: rgb(31 36 33 / 0.62);
+}
+
+@media (max-width: 1180px) {
+  .sb-testimonials__grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 860px) {

@@ -20,7 +20,7 @@ defineProps<{
         <p class="eyebrow">Articles</p>
         <h1>Homeowner guides for better exterior and remodel decisions.</h1>
         <p>
-          Practical reading for roofing, siding, bathroom remodels, maintenance, and project planning.
+          Practical reading for roofing, siding, gutters, bathroom remodels, maintenance, and project planning.
         </p>
       </div>
 

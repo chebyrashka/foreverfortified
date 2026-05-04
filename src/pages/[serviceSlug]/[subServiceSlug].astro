@@ -1,0 +1,27 @@
+---
+import ServiceSubPage from "@/components/pages/ServiceSubPage.vue";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { subServicePages } from "@/data/site";
+
+export function getStaticPaths() {
+  return subServicePages.map(({ service, subService }) => ({
+    params: {
+      serviceSlug: service.slug,
+      subServiceSlug: subService.slug
+    },
+    props: {
+      service,
+      subService
+    }
+  }));
+}
+
+const { service, subService } = Astro.props;
+---
+
+<BaseLayout
+  title={`${subService.title} | ${service.title}`}
+  description={`${subService.title} services from Forever Fortified.`}
+>
+  <ServiceSubPage service={service} subService={subService} />
+</BaseLayout>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BrandIcon from "@/components/site/BrandIcon.vue";
+
 type Service = {
   slug: string;
   title: string;
@@ -12,9 +14,12 @@ type Service = {
 
 type Testimonial = {
   quote: string;
+  fullQuote?: string;
   name: string;
-  location: string;
-  service: string;
+  featured?: boolean;
+  location?: string;
+  service?: string;
+  source?: string;
 };
 
 type Article = {
@@ -26,11 +31,26 @@ type Article = {
   image: string;
 };
 
-defineProps<{
+const whyItems = [
+  { icon: "shield", label: "Weather-ready thinking" },
+  { icon: "communication", label: "Clear project communication" },
+  { icon: "materials", label: "Materials matched to long-term value" },
+  { icon: "home-care", label: "Respect for the finished home" }
+];
+
+const showProcessSection = false;
+const showArticlesSection = false;
+
+const props = defineProps<{
   company: {
     name: string;
     intro: string;
     heroImage: string;
+    heroCopy: {
+      eyebrow: string;
+      headline: string;
+      intro: string;
+    };
     estimateUrl: string;
   };
   services: Service[];
@@ -45,6 +65,12 @@ defineProps<{
     image: string;
   };
 }>();
+
+const featuredTestimonials = props.testimonials.filter((testimonial) => testimonial.featured).slice(0, 3);
+
+function testimonialMeta(testimonial: Testimonial) {
+  return [testimonial.service, testimonial.location].filter(Boolean).join(" · ");
+}
 </script>
 
 <template>
@@ -54,9 +80,9 @@ defineProps<{
       <div class="hero__shade" aria-hidden="true" />
       <div class="hero__content container-wide">
         <div class="hero__copy">
-          <p class="hero__eyebrow">Roofing. Siding. Bathroom remodels.</p>
-          <h1>Exterior and remodeling work built to hold up.</h1>
-          <p>{{ company.intro }}</p>
+          <p class="hero__eyebrow">{{ company.heroCopy.eyebrow }}</p>
+          <h1>{{ company.heroCopy.headline }}</h1>
+          <p>{{ company.heroCopy.intro }}</p>
           <div class="button-row">
             <a class="btn btn-primary" :href="company.estimateUrl">
               Request a Free Estimate
@@ -74,16 +100,19 @@ defineProps<{
         </div>
         <div class="hero__proof" aria-label="Company proof points">
           <div>
-            <strong>3</strong>
-            <span>Core home improvement specialties</span>
+            <strong>4</strong>
+            <span>Core specialties</span>
+            <small>Roofing, siding, gutters, and bathrooms.</small>
           </div>
           <div>
-            <strong>01</strong>
-            <span>Clear next step from estimate to walkthrough</span>
+            <strong>24h</strong>
+            <span>Quote follow-up</span>
+            <small>We will get back to you within one day.</small>
           </div>
           <div>
-            <strong>FF</strong>
-            <span>Built around durable, practical recommendations</span>
+            <strong>1st</strong>
+            <span>Done-right mindset</span>
+            <small>Careful prep, clean work, and a final walkthrough.</small>
           </div>
         </div>
       </div>
@@ -91,10 +120,38 @@ defineProps<{
 
     <section class="trust-strip" aria-label="Trust signals">
       <div class="trust-strip__inner container-wide">
-        <span>Locally focused</span>
-        <span>Free estimates</span>
-        <span>Roofing, siding, bathrooms</span>
-        <span>Practical project guidance</span>
+        <div class="trust-strip__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m12 3 2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.8L12 3Z" />
+          </svg>
+          <span>Detail-driven work</span>
+        </div>
+        <div class="trust-strip__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m5 12 4.2 4.2L19 6.8" />
+          </svg>
+          <span>Free estimates</span>
+        </div>
+        <div class="trust-strip__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s6-5.7 6-11a6 6 0 0 0-12 0c0 5.3 6 11 6 11Z" />
+            <path d="M12 12.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" />
+          </svg>
+          <span>Minnesota local</span>
+        </div>
+        <div class="trust-strip__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14M5 12h14M5 17h10" />
+          </svg>
+          <span>Clear guidance</span>
+        </div>
+        <div class="trust-strip__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 5h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
+            <path d="m8.5 12.3 2.2 2.2 4.8-5" />
+          </svg>
+          <span>Hands-on oversight</span>
+        </div>
       </div>
     </section>
 
@@ -102,9 +159,10 @@ defineProps<{
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Core specialties</p>
-          <h2 class="section-title">Start with the part of your home that needs attention most.</h2>
+          <h2 class="section-title">Get the work done right, at a fair price.</h2>
           <p class="section-copy">
-            Each service page is designed to help homeowners understand the work, the options, and the next clear step.
+            Forever Fortified brings honest recommendations, quality materials, and clean craftsmanship to the projects
+            your home needs most, from roofing and siding to gutters and bathroom remodels.
           </p>
         </div>
 
@@ -137,15 +195,15 @@ defineProps<{
         </div>
         <div class="why-copy">
           <p>
-            The design should make the company feel specific: sturdy recommendations, clean communication, and work
-            that respects the home before, during, and after the project.
+            The best home upgrades feel steady from start to finish. With Forever Fortified, you get honest guidance,
+            clean communication, and craftsmanship that treats your home with care at every step.
           </p>
-          <div class="why-list">
-            <span>Weather-ready thinking</span>
-            <span>Cleaner project communication</span>
-            <span>Materials matched to long-term value</span>
-            <span>Respect for the finished home</span>
-          </div>
+          <ul class="why-list">
+            <li v-for="item in whyItems" :key="item.label">
+              <BrandIcon class="why-list__icon" :name="item.icon" :size="32" />
+              <span>{{ item.label }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -159,7 +217,6 @@ defineProps<{
           <p class="eyebrow">{{ featuredProject.category }}</p>
           <h2>{{ featuredProject.title }}</h2>
           <p>{{ featuredProject.text }}</p>
-          <span>{{ featuredProject.location }}</span>
           <a class="btn btn-secondary" href="/projects/">
             View Recent Work
             <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true">
@@ -174,21 +231,21 @@ defineProps<{
       <div class="container">
         <div class="section-heading section-heading--center">
           <p class="eyebrow">Homeowner proof</p>
-          <h2 class="section-title">The kind of work people are comfortable recommending.</h2>
+          <h2 class="section-title">The kind of work people are happy to recommend.</h2>
         </div>
         <div class="testimonial-grid">
-          <figure v-for="testimonial in testimonials" :key="testimonial.quote">
+          <figure v-for="testimonial in featuredTestimonials" :key="testimonial.quote">
             <blockquote>{{ testimonial.quote }}</blockquote>
             <figcaption>
               <strong>{{ testimonial.name }}</strong>
-              <span>{{ testimonial.service }} · {{ testimonial.location }}</span>
+              <span>{{ testimonialMeta(testimonial) }}</span>
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section process">
+    <section v-if="showProcessSection" class="section process">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Process</p>
@@ -204,7 +261,7 @@ defineProps<{
       </div>
     </section>
 
-    <section class="section articles-preview">
+    <section v-if="showArticlesSection" class="section articles-preview">
       <div class="container">
         <div class="section-heading section-heading--split">
           <div>
@@ -234,9 +291,9 @@ defineProps<{
     <section class="final-cta">
       <div class="container final-cta__inner">
         <div>
-          <p class="eyebrow">Start here</p>
+          <p class="eyebrow">Ready to get started?</p>
           <h2>Ready to fortify your home?</h2>
-          <p>Tell us what you are planning and we will help you take the next clear step.</p>
+          <p>Tell us what you're planning. We'll get back to you within 24 hours with a clear next step — no pressure, no nonsense.</p>
         </div>
         <a class="btn btn-primary" :href="company.estimateUrl">
           Request a Free Estimate
@@ -286,7 +343,7 @@ defineProps<{
 }
 
 .hero__copy {
-  max-width: 760px;
+  max-width: 1000px;
 }
 
 .hero__eyebrow {
@@ -299,17 +356,16 @@ defineProps<{
 }
 
 .hero h1 {
-  max-width: 850px;
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(3.1rem, 8.4vw, 7.4rem);
+  font-size: clamp(2.75rem, 7.3vw, 6.5rem);
   font-weight: var(--font-display-weight);
-  line-height: 0.91;
+  line-height: 0.94;
 }
 
 .hero__copy > p:not(.hero__eyebrow) {
   max-width: 650px;
-  margin: var(--size-5) 0 var(--size-8);
+  margin: var(--size-8) 0 var(--size-10);
   color: rgb(255 255 255 / 0.82);
   font-size: clamp(1.08rem, 1.7vw, 1.3rem);
 }
@@ -319,31 +375,55 @@ defineProps<{
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   overflow: hidden;
-  border: 1px solid rgb(255 255 255 / 0.18);
   border-radius: var(--radius-md);
-  background: rgb(255 255 255 / 0.12);
-  backdrop-filter: blur(16px);
+  background: rgb(247 250 245 / 0.96);
+  box-shadow: var(--shadow-strong);
+  color: var(--color-iron);
 }
 
 .hero__proof div {
-  min-height: 112px;
-  padding: var(--size-5);
-  background: rgb(16 19 17 / 0.42);
+  min-height: 142px;
+  padding: clamp(1.2rem, 2.4vw, 2rem);
+  background: var(--color-warm-white);
 }
 
 .hero__proof strong {
   display: block;
-  color: var(--color-warm-white);
-  font-family: var(--font-label);
-  font-size: 1.5rem;
+  color: var(--color-copper);
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 4.75rem);
+  font-weight: var(--font-display-weight);
+  line-height: 0.88;
 }
 
 .hero__proof span {
   display: block;
   max-width: 24ch;
+  margin-top: var(--size-3);
+  color: var(--color-iron);
+  font-family: var(--font-label);
+  font-size: 0.92rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.hero__proof small {
+  display: block;
+  max-width: 28ch;
   margin-top: var(--size-2);
-  color: rgb(247 243 236 / 0.72);
-  font-size: 0.9rem;
+  color: rgb(31 36 33 / 0.68);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.hero .btn-light {
+  border-color: rgb(255 255 255 / 0.24);
+  background: rgb(255 255 255 / 0.055);
+}
+
+.hero .btn-light:hover {
+  border-color: rgb(255 255 255 / 0.72);
+  background: rgb(255 255 255 / 0.12);
 }
 
 .trust-strip {
@@ -353,22 +433,42 @@ defineProps<{
 
 .trust-strip__inner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.trust-strip span {
-  display: grid;
+.trust-strip__item {
+  display: flex;
   min-height: 78px;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-3);
   border-left: 1px solid rgb(31 36 33 / 0.1);
   color: var(--color-graphite);
   font-family: var(--font-label);
   font-size: 0.88rem;
   font-weight: 800;
   text-align: center;
+  text-transform: uppercase;
 }
 
-.trust-strip span:last-child {
+.trust-strip__item svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  color: var(--color-copper);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+.trust-strip__item:first-child svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.trust-strip__item:last-child {
   border-right: 1px solid rgb(31 36 33 / 0.1);
 }
 
@@ -392,11 +492,13 @@ defineProps<{
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--size-5);
 }
 
 .service-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid rgb(31 36 33 / 0.1);
   border-radius: var(--radius-md);
@@ -411,6 +513,9 @@ defineProps<{
 }
 
 .service-card__body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
   padding: var(--size-5);
 }
 
@@ -428,7 +533,7 @@ defineProps<{
 .service-card ul {
   display: grid;
   gap: var(--size-2);
-  margin: var(--size-5) 0;
+  margin: var(--size-4) 0 var(--size-5);
   padding: 0;
   list-style: none;
 }
@@ -437,7 +542,7 @@ defineProps<{
   display: flex;
   gap: var(--size-2);
   color: var(--color-graphite);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .service-card li::before {
@@ -452,11 +557,25 @@ defineProps<{
 
 .service-card a {
   display: inline-flex;
+  width: 100%;
+  min-height: 58px;
   align-items: center;
   gap: var(--size-2);
-  color: var(--color-forest);
+  margin-top: auto;
+  border-top: 1px solid rgb(31 36 33 / 0.12);
+  color: var(--color-copper);
+  padding-top: var(--size-5);
   font-family: var(--font-label);
+  font-size: 0.95rem;
   font-weight: 850;
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
+}
+
+.service-card a:hover {
+  color: var(--color-copper-dark);
+  padding-left: var(--size-2);
 }
 
 .why-band {
@@ -480,12 +599,24 @@ defineProps<{
   grid-template-columns: repeat(2, 1fr);
   gap: var(--size-3);
   margin-top: var(--size-8);
+  padding: 0;
+  list-style: none;
 }
 
-.why-list span {
+.why-list li {
+  display: grid;
+  gap: var(--size-3);
+  align-content: start;
   border-left: 3px solid var(--color-copper);
   background: rgb(255 255 255 / 0.6);
   padding: var(--size-4);
+}
+
+.why-list__icon {
+  color: var(--color-copper);
+}
+
+.why-list span {
   font-family: var(--font-label);
   font-weight: 800;
 }
@@ -505,15 +636,17 @@ defineProps<{
   width: 100%;
   height: 100%;
   min-height: 520px;
+  border-radius: var(--radius-md);
   object-fit: cover;
 }
 
 .spotlight-copy {
   display: grid;
   align-content: center;
+  border-radius: var(--radius-md);
   background: var(--color-forest);
   color: var(--color-white);
-  padding: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.75rem, 3.5vw, 3rem);
 }
 
 .spotlight-copy h2 {
@@ -525,7 +658,7 @@ defineProps<{
 }
 
 .spotlight-copy p:not(.eyebrow) {
-  margin: var(--size-5) 0 0;
+  margin: var(--size-5) 0 var(--size-6);
   color: rgb(247 243 236 / 0.78);
 }
 
@@ -540,7 +673,24 @@ defineProps<{
 }
 
 .spotlight-copy .btn {
-  width: fit-content;
+  width: 100%;
+  min-height: 58px;
+  justify-content: flex-start;
+  border: 0;
+  border-top: 1px solid rgb(247 243 236 / 0.2);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-white);
+  padding: var(--size-5) 0 0;
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
+}
+
+.spotlight-copy .btn:hover {
+  transform: none;
+  color: var(--color-stone);
+  padding-left: var(--size-2);
 }
 
 .testimonials {
@@ -669,16 +819,17 @@ figcaption span {
 }
 
 .final-cta {
-  background: var(--color-iron);
+  background:
+    linear-gradient(135deg, rgb(47 94 64 / 0.98), rgb(31 68 46 / 0.98)),
+    var(--color-copper);
   color: var(--color-white);
   padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .final-cta__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
   gap: var(--size-8);
+  justify-items: start;
 }
 
 .final-cta h2 {
@@ -689,19 +840,48 @@ figcaption span {
   line-height: 0.98;
 }
 
+.final-cta .eyebrow {
+  color: var(--color-white);
+}
+
 .final-cta p:not(.eyebrow) {
   max-width: 56ch;
   margin: var(--size-4) 0 0;
   color: rgb(247 243 236 / 0.74);
 }
 
-@media (max-width: 980px) {
+.final-cta .btn-primary {
+  width: min(100%, 560px);
+  min-height: 58px;
+  justify-content: flex-start;
+  border: 0;
+  border-top: 1px solid rgb(247 243 236 / 0.32);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--color-white);
+  padding: var(--size-5) 0 0;
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
+}
+
+.final-cta .btn-primary:hover {
+  transform: none;
+  background: transparent;
+  color: var(--color-stone);
+  padding-left: var(--size-2);
+}
+
+@media (max-width: 1180px) {
   .service-grid,
   .testimonial-grid,
   .article-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
 
+@media (max-width: 980px) {
   .why-grid,
   .spotlight-grid {
     grid-template-columns: 1fr;
@@ -709,6 +889,10 @@ figcaption span {
 
   .process-list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .trust-strip__inner {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -733,7 +917,7 @@ figcaption span {
     flex-direction: column;
   }
 
-  .trust-strip span {
+  .trust-strip__item {
     min-height: 58px;
     border-right: 1px solid rgb(31 36 33 / 0.1);
   }

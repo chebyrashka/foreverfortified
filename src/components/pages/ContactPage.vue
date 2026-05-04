@@ -13,10 +13,10 @@ defineProps<{
     <div class="container contact-grid">
       <div class="contact-copy">
         <p class="eyebrow">Request an estimate</p>
-        <h1>Tell us what you want to improve, protect, or remodel.</h1>
+        <h1>Ready to start your estimate?</h1>
         <p>
-          This form is ready for Netlify Forms or a future form provider. Once hosting is selected, the action can be
-          connected without changing the visual design.
+          Tell us about your roofing, siding, gutter, or bathroom project and we’ll follow up with a practical next
+          step. Share what you know now, we can help sort out the details during the estimate process.
         </p>
         <div class="contact-methods">
           <a :href="`tel:${company.phoneHref || company.phone.replace(/[^0-9]/g, '')}`">{{ company.phone }}</a>
@@ -48,14 +48,15 @@ defineProps<{
             <option value="">Select a project</option>
             <option>Roofing</option>
             <option>Siding</option>
+            <option>Gutters</option>
             <option>Bathroom Remodel</option>
             <option>Other</option>
           </select>
         </label>
 
         <label>
-          City or ZIP
-          <input name="location" autocomplete="postal-code" />
+          City
+          <input name="location" autocomplete="address-level2" />
         </label>
 
         <label class="full">
@@ -94,9 +95,9 @@ defineProps<{
 .contact-copy h1 {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.7rem, 5.4vw, 6rem);
+  font-size: clamp(2.25rem, 4.2vw, 4.6rem);
   font-weight: var(--font-display-weight);
-  line-height: 0.94;
+  line-height: 0.98;
 }
 
 .contact-copy p:not(.eyebrow) {

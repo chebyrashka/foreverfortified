@@ -1,81 +1,135 @@
 <script setup lang="ts">
-defineProps<{
+import CtaBandBlock from "@/components/blocks/CtaBandBlock.vue";
+import TestimonialGridBlock from "@/components/blocks/TestimonialGridBlock.vue";
+
+type Testimonial = {
+  quote: string;
+  fullQuote?: string;
+  name: string;
+  featured?: boolean;
+  location?: string;
+  service?: string;
+  source?: string;
+};
+
+const props = defineProps<{
   company: {
     name: string;
     intro: string;
     estimateUrl: string;
     heroImage: string;
   };
+  testimonials: Testimonial[];
 }>();
+
+const featuredTestimonials = props.testimonials.filter((testimonial) => testimonial.featured).slice(0, 3);
+
+function testimonialMeta(testimonial: Testimonial) {
+  return [testimonial.service, testimonial.location].filter(Boolean).join(" · ");
+}
+
+const testimonialItems = featuredTestimonials.map((testimonial) => ({
+  quote: testimonial.quote,
+  name: testimonial.name,
+  meta: testimonialMeta(testimonial)
+}));
 </script>
 
 <template>
   <article class="about-page">
     <section class="about-hero">
-      <div class="container about-hero__grid">
-        <div>
-          <p class="eyebrow">About {{ company.name }}</p>
-          <h1>Practical home improvement work with a stronger point of view.</h1>
-          <p>{{ company.intro }}</p>
-          <a class="btn btn-primary" :href="company.estimateUrl">Request a Free Estimate</a>
-        </div>
-        <img :src="company.heroImage" alt="A durable residential exterior detail" />
+      <div class="about-hero__image">
+        <img src="/images/service-photos/about-hero-exterior.jpg" alt="A finished Minnesota home exterior with gutters" />
+      </div>
+      <div class="about-hero__copy">
+        <p class="eyebrow">About {{ company.name }}</p>
+        <h1>Veteran-owned home improvement built for Minnesota homes.</h1>
+        <p>
+          Forever Fortified brings more than 20 years of experience to roofing, siding, gutters, windows, doors,
+          painting, bathroom remodels, and other exterior and interior improvements across Minnesota.
+        </p>
+        <a class="btn btn-primary" :href="company.estimateUrl">Request a Free Estimate</a>
       </div>
     </section>
 
     <section class="section values">
       <div class="container">
         <p class="eyebrow">Company story</p>
-        <h2 class="section-title">A brand built around showing up clearly and finishing carefully.</h2>
+        <h2 class="section-title">Hands-on project management, premium materials, and work built to last.</h2>
+        <p class="section-copy">
+          As a veteran-owned contractor, Forever Fortified focuses on upscale home improvements with transparent
+          pricing, professional oversight, and high-quality American-made materials. The team specializes in durable
+          roofing systems, including Brava Roof Tiles and other premium solutions, and backs its work with a 15-year
+          workmanship warranty.
+        </p>
         <div class="value-grid">
           <article>
-            <h3>Clear recommendations</h3>
-            <p>Homeowners should understand the project, the options, and why one path makes more sense than another.</p>
+            <h3>Transparent pricing</h3>
+            <p>Homeowners should understand the scope, the options, and what is included before work begins.</p>
           </article>
           <article>
-            <h3>Durable materials</h3>
-            <p>The work should hold up visually and practically, especially in a climate that asks a lot from a home.</p>
+            <h3>Premium materials</h3>
+            <p>Material recommendations are shaped around long-term performance, curb appeal, and Minnesota weather.</p>
           </article>
           <article>
-            <h3>Respect for the home</h3>
-            <p>The job site, communication, and final walkthrough should all reinforce that the home is being cared for.</p>
+            <h3>Hands-on oversight</h3>
+            <p>Projects are managed with steady communication, careful workmanship, and attention through the finish.</p>
           </article>
         </div>
       </div>
     </section>
+
+    <TestimonialGridBlock :items="testimonialItems" />
+
+    <CtaBandBlock
+      eyebrow="Ready to get started?"
+      title="Ready to fortify your home?"
+      text="Tell us what you're planning. We'll get back to you within 24 hours with a clear next step — no pressure, no nonsense."
+      cta-label="Request a Free Estimate"
+      :cta-href="company.estimateUrl"
+    />
   </article>
 </template>
 
 <style scoped>
 .about-hero {
-  padding-block: clamp(4rem, 8vw, 7rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  min-height: calc(88svh - var(--header-height));
+  background: var(--color-warm-white);
 }
 
-.about-hero__grid {
+.about-hero__image {
+  overflow: hidden;
+}
+
+.about-hero__image img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.about-hero__copy {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
+  align-content: center;
+  padding: clamp(2rem, 7vw, 6rem);
 }
 
 .about-hero h1 {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.7rem, 5.4vw, 6.3rem);
+  font-size: clamp(2.45rem, 4.8vw, 5.4rem);
   font-weight: var(--font-display-weight);
-  line-height: 0.94;
+  line-height: 0.96;
 }
 
-.about-hero p:not(.eyebrow) {
+.about-hero__copy > p:not(.eyebrow) {
+  max-width: 58ch;
   margin: var(--size-5) 0 var(--size-8);
   color: rgb(31 36 33 / 0.74);
-  font-size: 1.14rem;
-}
-
-.about-hero img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  font-size: 1.12rem;
 }
 
 .values {
@@ -87,6 +141,10 @@ defineProps<{
   grid-template-columns: repeat(3, 1fr);
   gap: var(--size-5);
   margin-top: var(--size-10);
+}
+
+.values .section-copy {
+  max-width: 78ch;
 }
 
 .value-grid article {
@@ -107,13 +165,22 @@ defineProps<{
 }
 
 @media (max-width: 860px) {
-  .about-hero__grid,
+  .about-hero,
   .value-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-hero img {
-    aspect-ratio: 16 / 10;
+  .about-hero {
+    min-height: auto;
+  }
+
+  .about-hero__image img {
+    height: auto;
+    min-height: 0;
+  }
+
+  .about-hero__copy {
+    padding-inline: var(--gutter);
   }
 }
 </style>
