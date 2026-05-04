@@ -1,0 +1,51 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Thank You" description="Thanks for contacting Forever Fortified.">
+  <section class="thank-you-page">
+    <div class="container thank-you-page__inner">
+      <p class="eyebrow">Request received</p>
+      <h1>Thanks, we’ll follow up soon.</h1>
+      <p>
+        Your project details have been sent to Forever Fortified. We’ll review what you shared and follow up with a
+        practical next step.
+      </p>
+      <a class="btn btn-primary" href="/">
+        Back to Home
+        <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3 8h9M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .thank-you-page {
+    display: grid;
+    min-height: calc(78svh - var(--header-height));
+    align-items: center;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+
+  .thank-you-page__inner {
+    max-width: 860px;
+  }
+
+  .thank-you-page h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: var(--font-display-weight);
+    line-height: 0.96;
+  }
+
+  .thank-you-page p:not(.eyebrow) {
+    max-width: 58ch;
+    margin: var(--size-5) 0 var(--size-8);
+    color: rgb(31 36 33 / 0.72);
+    font-size: 1.16rem;
+    line-height: 1.65;
+  }
+</style>

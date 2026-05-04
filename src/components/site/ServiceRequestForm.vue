@@ -8,7 +8,7 @@ const formName = `service-request-${props.serviceSlug}`;
 </script>
 
 <template>
-  <form class="service-request-form" :name="formName" method="POST" data-netlify="true">
+  <form class="service-request-form" :name="formName" method="POST" action="/thank-you/" data-netlify="true">
     <input type="hidden" name="form-name" :value="formName" />
     <input type="hidden" name="service" :value="serviceTitle" />
 
@@ -29,7 +29,7 @@ const formName = `service-request-${props.serviceSlug}`;
 
     <label>
       City
-      <input name="location" autocomplete="postal-code" />
+      <input name="location" autocomplete="address-level2" />
     </label>
 
     <label>

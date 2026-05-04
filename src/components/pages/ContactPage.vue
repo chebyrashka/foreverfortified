@@ -24,7 +24,7 @@ defineProps<{
         </div>
       </div>
 
-      <form class="estimate-form" name="estimate" method="POST" data-netlify="true">
+      <form class="estimate-form" name="estimate" method="POST" action="/thank-you/" data-netlify="true">
         <input type="hidden" name="form-name" value="estimate" />
 
         <label>

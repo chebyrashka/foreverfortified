@@ -2,22 +2,22 @@
   color-scheme: light;
 
   --color-iron: #17231d;
-  --color-graphite: #334039;
-  --color-forest: #244c35;
-  --color-copper: #2f5e40;
-  --color-copper-dark: #1f442e;
-  --color-warm-white: #fbfaf5;
-  --color-stone: #d9e1d8;
-  --color-stone-light: #f0f3ec;
+  --color-graphite: #334037;
+  --color-forest: #21432e;
+  --color-copper: #285b3d;
+  --color-copper-dark: #1c3d2b;
+  --color-warm-white: #fbfaf6;
+  --color-stone: #dbe1d7;
+  --color-stone-light: #f1f3ed;
   --color-white: #ffffff;
   --color-black: #0d1410;
 
-  --font-heading: "Sora", "Manrope", "Inter", system-ui, sans-serif;
-  --font-body: "Atkinson Hyperlegible", "Inter", system-ui, sans-serif;
+  --font-heading: "Literata", Georgia, serif;
+  --font-body: "Manrope", "Inter", system-ui, sans-serif;
   --font-label: "Manrope", "Inter", system-ui, sans-serif;
-  --font-quote: "Newsreader", Georgia, serif;
-  --font-heading-weight: 800;
-  --font-display-weight: 900;
+  --font-quote: "Literata", Georgia, serif;
+  --font-heading-weight: 600;
+  --font-display-weight: 600;
 
   --size-1: 0.25rem;
   --size-2: 0.5rem;
@@ -35,8 +35,8 @@
   --radius-sm: 6px;
   --radius-md: 8px;
 
-  --shadow-soft: 0 18px 45px rgb(23 35 29 / 0.12);
-  --shadow-strong: 0 28px 70px rgb(23 35 29 / 0.22);
+  --shadow-soft: 0 18px 45px rgb(23 35 29 / 0.13);
+  --shadow-strong: 0 28px 70px rgb(23 35 29 / 0.24);
 
   --container: 1180px;
   --container-wide: 1360px;
