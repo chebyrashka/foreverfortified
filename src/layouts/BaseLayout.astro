@@ -1,7 +1,7 @@
 ---
 import SiteFooter from "@/components/site/SiteFooter.vue";
 import SiteHeader from "@/components/site/SiteHeader.vue";
-import { company, navItems, services } from "@/data/site";
+import { company, navItems, services, subServicePages } from "@/data/site";
 import "@/styles/global.css";
 
 interface Props {
@@ -15,6 +15,19 @@ const {
 } = Astro.props;
 
 const pageTitle = title === company.name ? title : `${title} | ${company.name}`;
+
+const netlifyFormNames = [
+  { name: "estimate", service: "General estimate" },
+  ...services.map((service) => ({
+    name: `service-request-${service.slug}`,
+    service: service.title
+  })),
+  { name: "service-request-roofing-brava", service: "Brava Roof Tile" },
+  ...subServicePages.map(({ service, subService }) => ({
+    name: `service-request-${service.slug}-${subService.slug}`,
+    service: subService.title
+  }))
+];
 ---
 
 <!doctype html>
@@ -28,11 +41,91 @@ const pageTitle = title === company.name ? title : `${title} | ${company.name}`;
   </head>
   <body>
     <div class="page-shell">
+      <div class="netlify-form-definitions" hidden aria-hidden="true">
+        {
+          netlifyFormNames.map((form) => (
+            <form name={form.name} method="POST" action="/thank-you/" data-netlify="true">
+              <input type="hidden" name="form-name" value={form.name} />
+              <input type="hidden" name="service" value={form.service} />
+              <input name="name" />
+              <input name="email" type="email" />
+              <input name="phone" type="tel" />
+              <input name="project_type" />
+              <input name="location" />
+              <input name="timing" />
+              <textarea name="message"></textarea>
+            </form>
+          ))
+        }
+      </div>
       <SiteHeader client:load company={company} navItems={navItems} services={services} />
       <main id="main-content">
         <slot />
       </main>
       <SiteFooter company={company} navItems={navItems} services={services} />
     </div>
+    <script is:inline>
+      (() => {
+        const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+
+        const showStatus = (form, message) => {
+          let status = form.querySelector("[data-form-status]");
+
+          if (!status) {
+            status = document.createElement("p");
+            status.setAttribute("data-form-status", "");
+            status.setAttribute("role", "status");
+            form.append(status);
+          }
+
+          status.textContent = message;
+        };
+
+        document.addEventListener("submit", async (event) => {
+          const form = event.target;
+
+          if (!(form instanceof HTMLFormElement) || !form.matches("form[data-netlify='true']")) {
+            return;
+          }
+
+          event.preventDefault();
+
+          const action = form.getAttribute("action") || "/thank-you/";
+          const formData = new FormData(form);
+          const formName = form.getAttribute("name") || formData.get("form-name");
+          const submitButton = form.querySelector("button[type='submit']");
+
+          if (formName) {
+            formData.set("form-name", formName);
+          }
+
+          if (submitButton) {
+            submitButton.disabled = true;
+          }
+
+          try {
+            if (!localHosts.has(window.location.hostname)) {
+              const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+              });
+
+              if (!response.ok) {
+                throw new Error("Form submission failed.");
+              }
+            }
+
+            window.location.assign(action);
+          } catch (error) {
+            showStatus(form, "Something went wrong. Please call or email us and we’ll help from there.");
+
+            if (submitButton) {
+              submitButton.disabled = false;
+            }
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
