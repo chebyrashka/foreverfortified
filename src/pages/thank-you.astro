@@ -1,15 +1,16 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { company } from "@/data/site";
 ---
 
 <BaseLayout title="Thank You" description="Thanks for contacting Forever Fortified.">
   <section class="thank-you-page">
     <div class="container thank-you-page__inner">
       <p class="eyebrow">Request received</p>
-      <h1>Thanks, we’ll follow up soon.</h1>
+      <h1>Thank you!</h1>
       <p>
-        Your project details have been sent to Forever Fortified. We’ll review what you shared and follow up with a
-        practical next step.
+        We received your request and will respond as soon as we review it. If you need to contact us in the meantime,
+        please call us at <a href={`tel:${company.phoneHref}`}>{company.phone}</a>.
       </p>
       <a class="btn btn-primary" href="/">
         Back to Home
