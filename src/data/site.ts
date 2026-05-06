@@ -43,7 +43,7 @@ export const services = [
     summary:
       "From inspections and repairs to full replacement, Forever Fortified helps homeowners protect the structure that protects everything else.",
     image:
-      "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png",
+      "/images/service-photos/photo-bg-roof.jpg",
     cta: "Explore Roofing",
     highlights: ["Roof inspections", "Repairs and replacement", "Storm-ready materials"],
     problems: [
@@ -295,7 +295,7 @@ const serviceEnhancements: Record<string, any> = {
       {
         title: "Roof replacement planning",
         text: "Full roof projects show how planning, prep, flashing, and final cleanup support the finished result.",
-        image: "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png"
+        image: "/images/service-photos/photo-bg-roof.jpg"
       },
       {
         title: "Flashing and roofline details",
@@ -493,7 +493,7 @@ export const articles = [
     excerpt:
       "The signs homeowners can look for before deciding whether to patch, repair, or start planning a replacement.",
     image:
-      "https://foreverfortified.com/wp-content/themes/foreverfortified/assets/img/photo-bg-roof.png",
+      "/images/service-photos/photo-bg-roof.jpg",
     intro: [
       "A roof problem rarely arrives at a convenient time. Most homeowners notice a stain on the ceiling, a few shingles in the yard, a drip near a bathroom fan, or a damp spot after a storm and immediately wonder how serious it is.",
       "The hard part is that roofs do not always fail in obvious ways. A small leak can come from one loose flashing detail, or it can be the first visible sign that the roof system is wearing out across several areas. Two homes can have the same ceiling stain and need very different solutions.",

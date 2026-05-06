@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 122" role="img" aria-labelledby="title">
+  <title id="title">Forever Fortified</title>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="7" d="M18 68 62 24l31 31 36-36 48 49" />
+    <path stroke-width="7" d="M72 68 116 24l31 31 36-36 54 55" />
+    <path stroke-width="7" d="M128 68 172 24l31 31 36-36 63 63" />
+    <path stroke-width="5" d="M34 70h255" />
+    <path stroke-width="5" d="M143 69V52h34v17" />
+    <path stroke-width="4" d="M160 52v17M143 61h34" />
+  </g>
+  <text
+    x="160"
+    y="112"
+    fill="#111"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="24"
+    font-weight="800"
+    letter-spacing="9"
+    text-anchor="middle"
+  >FOREVER FORTIFIED</text>
+</svg>
