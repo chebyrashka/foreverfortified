@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Forever Fortified">
-  <rect width="64" height="64" rx="14" fill="#17231d"/>
-  <path d="M9 39 24 24l8 8 8-8 15 15" fill="none" stroke="#fbfaf6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M18 39h28" fill="none" stroke="#fbfaf6" stroke-width="5" stroke-linecap="round"/>
-  <path d="M29 39v-8h7v8" fill="none" stroke="#285b3d" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M23 47h18" fill="none" stroke="#b86a3d" stroke-width="4" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <title>Forever Fortified</title>
+  <rect x="2" y="2" width="36" height="36" rx="8" fill="#1f4d2b"></rect>
+  <path d="M9 32 V17 H31 V32 Z" fill="#f5f1e8" stroke="#f5f1e8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+  <path d="M6 18 L20 8 L34 18 Z" fill="#f5f1e8" stroke="#f5f1e8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+  <path d="M15 17 H25 V19.8 H18 V21.6 H23.5 V24.4 H18 V28.5 H15 Z" fill="#1f4d2b"></path>
 </svg>
