@@ -127,6 +127,44 @@ const numericSortOrder = (value: number | string | undefined) => {
 
 const articleSlug = (story: StoryblokStory) => story.full_slug.replace(/^articles\//, "").replace(/\/$/, "");
 
+const slugLikePattern = /^[a-z0-9]+(?:[-_][a-z0-9]+)+$/i;
+
+const humanizeSlug = (value: string) => {
+  const smallWords = new Set(["a", "an", "and", "as", "at", "but", "by", "for", "from", "in", "into", "more", "nor", "of", "on", "or", "over", "the", "to", "when", "with"]);
+  const words = value
+    .replace(/^articles\//, "")
+    .replace(/\/$/, "")
+    .split(/[-_\s]+/)
+    .filter(Boolean);
+
+  return words
+    .map((word, index) => {
+      const lower = word.toLowerCase();
+
+      if (index > 0 && index < words.length - 1 && smallWords.has(lower)) {
+        return lower;
+      }
+
+      return `${lower.charAt(0).toUpperCase()}${lower.slice(1)}`;
+    })
+    .join(" ");
+};
+
+const storyTitle = (story: StoryblokStory, value: string | undefined) => {
+  const title = value?.trim();
+  const name = story.name?.trim();
+
+  if (title && !slugLikePattern.test(title)) {
+    return title;
+  }
+
+  if (name && !slugLikePattern.test(name)) {
+    return name;
+  }
+
+  return humanizeSlug(articleSlug(story));
+};
+
 const categoryLabel = (value: string | undefined): ArticleCategory => {
   if (!value) {
     return "Roofing";
@@ -291,7 +329,7 @@ const normalizeStoryblokArticle = (story: StoryblokStory): Article => {
 
   return {
     slug: articleSlug(story),
-    title: content.title || story.name,
+    title: storyTitle(story, content.title),
     category: categoryLabel(content.category),
     readTime: content.read_time || content.readTime || calculatedReadTime(body),
     sortOrder: numericSortOrder(content.sort_order ?? content.sortOrder ?? content.order),
