@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BrandIcon from "@/components/site/BrandIcon.vue";
+import type { Article } from "@/cms/articles";
 
 type Service = {
   slug: string;
@@ -20,15 +21,6 @@ type Testimonial = {
   location?: string;
   service?: string;
   source?: string;
-};
-
-type Article = {
-  slug: string;
-  title: string;
-  category: string;
-  readTime: string;
-  excerpt: string;
-  image: string;
 };
 
 const whyItems = [

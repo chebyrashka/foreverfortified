@@ -1,7 +1,9 @@
 ---
 import ArticleIndex from "@/components/pages/ArticleIndex.vue";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { articles } from "@/data/site";
+import { getArticles } from "@/cms/articles";
+
+const articles = await getArticles();
 ---
 
 <BaseLayout title="Articles" description="Homeowner guides for roofing, siding, gutters, bathroom remodels, and project planning.">

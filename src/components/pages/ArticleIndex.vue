@@ -1,12 +1,5 @@
 <script setup lang="ts">
-type Article = {
-  slug: string;
-  title: string;
-  category: string;
-  readTime: string;
-  excerpt: string;
-  image: string;
-};
+import type { Article } from "@/cms/articles";
 
 defineProps<{
   articles: Article[];

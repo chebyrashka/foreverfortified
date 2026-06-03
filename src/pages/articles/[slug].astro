@@ -1,9 +1,12 @@
 ---
 import ArticleDetail from "@/components/pages/ArticleDetail.vue";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { articles, company } from "@/data/site";
+import { getArticles } from "@/cms/articles";
+import { company } from "@/data/site";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const articles = await getArticles();
+
   return articles.map((article) => ({
     params: { slug: article.slug },
     props: { article }

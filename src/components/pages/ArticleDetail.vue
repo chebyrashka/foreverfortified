@@ -1,21 +1,9 @@
 <script setup lang="ts">
 import CtaBandBlock from "@/components/blocks/CtaBandBlock.vue";
+import type { Article } from "@/cms/articles";
 
 const props = defineProps<{
-  article: {
-    title: string;
-    category: string;
-    readTime: string;
-    excerpt: string;
-    image: string;
-    intro?: string[];
-    sections?: Array<{
-      title: string;
-      paragraphs: string[];
-      bullets?: string[];
-    }>;
-    closing?: string[];
-  };
+  article: Article;
   estimateUrl: string;
 }>();
 
@@ -33,6 +21,13 @@ const servicePromos: Record<string, { eyebrow: string; title: string; text: stri
     text: "See how siding, trim, and exterior details can clean up curb appeal and improve long-term protection.",
     href: "/siding/",
     cta: "Explore Siding"
+  },
+  Gutters: {
+    eyebrow: "Gutter help",
+    title: "Keep water moving away from the places it can cause trouble.",
+    text: "Explore gutter replacement, repair, and exterior drainage details planned around Minnesota weather.",
+    href: "/gutters/",
+    cta: "Explore Gutters"
   },
   "Bathroom Remodel": {
     eyebrow: "Bathroom help",

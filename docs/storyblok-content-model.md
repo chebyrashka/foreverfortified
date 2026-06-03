@@ -57,10 +57,24 @@ Fields:
 - `category`
 - `excerpt`
 - `hero_image`
-- `body`
 - `read_time`
+- `sort_order`
+- `intro`
+- `sections`: nested `article_content` blocks
+- `closing`
 - `published_at`
 - `related_service`
+
+Recommended categories:
+- Roofing
+- Siding
+- Gutters
+- Bathroom Remodel
+
+### Article Content
+
+Fields:
+- `content`: richtext
 
 ### Project
 
